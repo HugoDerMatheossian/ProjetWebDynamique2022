@@ -45,10 +45,27 @@
 			background-color: #4169E1;
 			color: white;
 		}
+		.retour{
+			background-color:#FF337A;
+			border: solid;
+			color: navajowhite;
+			padding: 2px;
+			margin: 2px;
+			text-align: center;
+			display: inline-block;
+			font-size: 8px;
+			cursor: pointer;
+			position:relative; 
+    			display:inline-block; 
+			float: right;
+		}
 	</style>
 </head>
 <body>
 	<div id="head">
+		<form>
+ 	 		<input type="button" value="Retour" class="retour" onclick="history.go(-1)">
+		</form>
 		<h1 align="center" style="color:#5F9EA0;">Tout Parcourir</h1>
 	</div>
 	<div id="navi">

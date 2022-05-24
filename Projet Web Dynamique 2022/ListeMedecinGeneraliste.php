@@ -24,7 +24,7 @@
 <html>
 <head></head>
 <body>
- <h1>Liste des Médecins Généralistes</h1>
+ <h1>Liste des Médecins Géneralistes</h1>
  <table>
    <thead>
      <tr>

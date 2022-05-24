@@ -1,11 +1,4 @@
 <?php
-/*$database="omnes_sante";
-$db_handle=mysqli_connect("localhost","root","");
-$db_found = mysqli_select_db($db_handle,$database);*/
-
-// on fait un traitement de la base de donnée si elle existe
-//if ($db_found){
-    //Select * from rdv_medecin as rdvm, rdv_labo as rdvl where rdvm.id_patient=rdvl.id_patient and rdvl.id_patient=1; 
 
     @$keywords=$_GET["keywords"];
     @$valider=$_GET["valider"];
@@ -17,6 +10,7 @@ $res->execute();
 $tab = $res->fetchAll();
     //$res = mysqli_query($db_handle,$sql);
     $afficher="oui";
+    
 
     
 
@@ -35,6 +29,9 @@ $tab = $res->fetchAll();
 
 
 mysqli_close($db_handle);*/
+/*$id= $data['ID']; 
+            echo '<a href="Nosservices.php?id='.$id.'"><img id="PHOTO" src="' . $image . '" title="Photo de profil" width=400px height=250px  > </a>  ';
+            echo '<h1>Nom: <a href="Nosservices.php?id='.$id.'">' .  $data['Nom'] .  ' </h1></a>';*/ 
  
 ?>
 
@@ -52,7 +49,6 @@ mysqli_close($db_handle);*/
             <input type="submit" name="valider" placeholder="Rechercher" />
             
         </form>
-
         <?php if (@$afficher=="oui") { ?>
         <div id="resultats">
             <div id="nbr"><?=count($tab)." ".(count($tab)>1?"résultats trouvés":"résultat trouvé") ?></div>
@@ -60,7 +56,8 @@ mysqli_close($db_handle);*/
                 <?php for ($i=0;$i<count($tab);$i++){ ?>
 
                 <li><?php 
-                echo "Dr ".$tab[$i]["Nom"]." ".$tab[$i]["Prenom"];
+                $id= $tab[$i]['ID_Medecin']; 
+                echo '<h1>Dr <a href="medecininfo.php?id='.$id.'">' .$tab[$i]["Nom"].' '.$tab[$i]["Prenom"].' </h1></a>';
                 ?></li>
 
                 <?php } ?>

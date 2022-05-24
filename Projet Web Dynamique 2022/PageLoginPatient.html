@@ -16,6 +16,7 @@
 			color: black;
 			text-align: center;
 			padding: 0px;
+			width: 100%;
 		}
 
 		#section {
@@ -57,6 +58,17 @@
 		h1{
 			text-align: center;
 		}
+		
+		#inscription{
+			width: 50%;
+			display: inline;
+			float: left;
+		}
+		#connexion{
+			width: 50%;
+			display: inline;
+			float: right;
+		}
  </style>
 </head>
 <body>
@@ -75,6 +87,19 @@
 				<a href="choixTypeCompte.html" class="bouton" style="width: 250px">Votre Compte</a>
 			</table>
 		</hr>
+	</div>
+	<div id="section">
+		<div id="inscription">
+			<h1>Inscription:</h1>
+		</div>
+		<div id="connexion">
+			<h1>Connexion:</h1>
+			<form action="PatientConnexion.php" method="post">
+			<input type="text" name="nom" placeholder="Votre Nom"></input>
+          	<input type="text" name="email" placeholder="Votre E-mail"></input>
+          	<input type="submit" value="Se connecter"></input>
+		</form>
+		</div>
 	</div>
 	<div id="footer">
 		<footer>

@@ -1,6 +1,6 @@
 <?php
   $host = 'localhost';
-  $dbname = 'omnessante2';
+  $dbname = 'omnes_sante';
   $username = 'root';
   $password = 'root';
     
@@ -22,7 +22,7 @@
 
 <!DOCTYPE html>
 <html>
-<head>Afficher la table medecin</head>
+<head></head>
 <body>
  <h1>Liste des Médecins Géneraliste</h1>
  <table>

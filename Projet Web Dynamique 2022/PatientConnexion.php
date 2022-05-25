@@ -52,6 +52,8 @@
 			echo "Connexion refusée. Utilisateur inconnu.";
 			echo '<meta http-equiv="refresh" content="5;URL=PageLoginPatient.html">';
 			echo "<br>";
+			echo '<img src="mad.png" width="400px">';
+			echo "<br>";
 			echo "Retour à la page de connexion dans 5 secondes";
 		}
 		else 
@@ -76,12 +78,16 @@
 				//ici on met accueil, mais on changera pour des pages méta
 				echo '<meta http-equiv="refresh" content="5;URL=Accueil.html">';
 				echo "<br>";
+				echo '<img src="happy.png" width="400px">';
+				echo "<br>";
 				echo "Redirection vers l'accueil' dans 5 secondes..";
 			} 
 			else 
 			{
 				echo "Connexion refusée. Mot de passe invalide.";
 				echo '<meta http-equiv="refresh" content="5;URL=PageLoginPatient.html">';
+				echo "<br>";
+				echo '<img src="mad.png" width="400px">';
 				echo "<br>";
 				echo "Retour à la page de connexion dans 5 secondes";
 			}
@@ -233,6 +239,8 @@
 				//on rafraichit la page
 				echo '<meta http-equiv="refresh" content="5;URL=PageLoginPatient.html">';
 				echo "<br>";
+				echo '<img src="mad.png" width="400px">';
+				echo "<br>";
 				echo "Reactualisation dans 5 secondes..";
 			}else{
 				//on ajoute ce patient dans notre BDD
@@ -242,6 +250,8 @@
 				//ici on met accueil, mais on changera pour la page perso
 				echo '<meta http-equiv="refresh" content="5;URL=Accueil.html">';
 				echo "<br>";
+				echo '<img src="happy.png" width="400px">';
+				echo "<br>";
 				echo "Redirection vers l'accueil' dans 5 secondes..";
 			}
 		}
@@ -249,6 +259,8 @@
 			echo "Database not found. <br>";
 			//on rafraichit la page
 				echo '<meta http-equiv="refresh" content="5;URL=PageLoginPatient.html">';
+				echo "<br>";
+				echo '<img src="mad.png" width="400px">';
 				echo "<br>";
 				echo "Reactualisation dans 5 secondes..";
 		}

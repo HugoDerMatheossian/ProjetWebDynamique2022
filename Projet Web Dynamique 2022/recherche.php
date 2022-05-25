@@ -8,30 +8,9 @@
 $res->setFetchMode(PDO::FETCH_ASSOC);
 $res->execute();
 $tab = $res->fetchAll();
-    //$res = mysqli_query($db_handle,$sql);
     $afficher="oui";
-    
-
-    
-
-    /*while ($data = mysqli_fetch_assoc($res)) {
-
-       echo " Dr ". $data['Nom']."<br>";
-           }
-    }*/
 
 }
-
-// si existe pas 
-/*else {
-    echo"Database not found";
-}
-
-
-mysqli_close($db_handle);*/
-/*$id= $data['ID']; 
-            echo '<a href="Nosservices.php?id='.$id.'"><img id="PHOTO" src="' . $image . '" title="Photo de profil" width=400px height=250px  > </a>  ';
-            echo '<h1>Nom: <a href="Nosservices.php?id='.$id.'">' .  $data['Nom'] .  ' </h1></a>';*/ 
  
 ?>
 

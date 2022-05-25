@@ -50,7 +50,7 @@
 	if (!$found) 
 	{
 		echo "Connexion refusée. Utilisateur inconnu.";
-		echo '<meta http-equiv="refresh" content="5;URL=PageLoginAdmin.html">';
+		echo '<meta http-equiv="refresh" content="5;URL=PageLoginMedecin.html">';
 		echo "<br>";
 		echo "Retour à la page de connexion dans 5 secondes";
 	}

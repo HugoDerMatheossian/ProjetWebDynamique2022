@@ -11,7 +11,7 @@
 		$login = isset($_POST["nom"])? $_POST["nom"] : "";
 		$mail = isset($_POST["email"])? $_POST["email"] : "";
 
-		$sql = "SELECT * FROM `medecin`";
+		$sql = "SELECT * FROM `patient`";
 		$result = mysqli_query($db_handle, $sql);
 		
 		$arraylogin = array();
@@ -21,7 +21,7 @@
 		while($data = mysqli_fetch_assoc($result))
 		{
 			$arraylogin[$compteur] = $data['Nom'];
-			$arraymail[$compteur] = $data['E-mail'];//////////
+			$arraymail[$compteur] = $data['E-mail'];
 			$compteur = $compteur + 1;
 		}
 
@@ -50,7 +50,7 @@
 		if (!$found) 
 		{
 			echo "Connexion refusée. Utilisateur inconnu.";
-			echo '<meta http-equiv="refresh" content="5;URL=PageLoginAdmin.html">';
+			echo '<meta http-equiv="refresh" content="5;URL=PageLoginPatient.html">';
 			echo "<br>";
 			echo "Retour à la page de connexion dans 5 secondes";
 		}
@@ -81,7 +81,7 @@
 			else 
 			{
 				echo "Connexion refusée. Mot de passe invalide.";
-				echo '<meta http-equiv="refresh" content="5;URL=PageLoginAdmin.html">';
+				echo '<meta http-equiv="refresh" content="5;URL=PageLoginPatient.html">';
 				echo "<br>";
 				echo "Retour à la page de connexion dans 5 secondes";
 			}
@@ -96,7 +96,7 @@
 			$adress2=isset($_POST["Adress2"])? $_POST["Adress2"] : "";
 			$city=isset($_POST["Ville"])? $_POST["Ville"] : "";
 			$postal=isset($_POST["CodePostal"])? $_POST["CodePostal"] : "";
-			//on teste toute les entrées possibles
+			///////////on teste toute les entrées possibles////////////////
 			if(!empty($_POST['Pays']) && ($_POST['Pays'] == 'France')){
 				$pays="France";
 			}
@@ -210,6 +210,7 @@
 			if(!empty($_POST['Pays']) && ($_POST['Pays'] == 'Niger')){
 				$pays="Niger";
 			}
+			////////////////////////////////////////////////////////////////
 			$phone=isset($_POST["Tel"])? $_POST["Tel"] : "";
 			$vital=isset($_POST["CarteVitale"])? $_POST["CarteVitale"] : "";
 			$email=isset($_POST["Email"])? $_POST["Email"] : "";

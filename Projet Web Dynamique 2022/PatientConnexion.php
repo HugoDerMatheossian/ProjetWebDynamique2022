@@ -80,7 +80,7 @@
 			} 
 			else 
 			{
-				echo "Connexion refusée. Mot= de passe invalide.";
+				echo "Connexion refusée. Mot de passe invalide.";
 				echo '<meta http-equiv="refresh" content="5;URL=PageLoginAdmin.html">';
 				echo "<br>";
 				echo "Retour à la page de connexion dans 5 secondes";
@@ -235,7 +235,7 @@
 				echo "Reactualisation dans 5 secondes..";
 			}else{
 				//on ajoute ce patient dans notre BDD
-				$sql = "INSERT INTO `patient`(Nom,Prenom,Adresse1,Adresse2,Ville,Code_Postal,Pays,Tel,Carte_Vitale,E-mail) VALUES ('$name','$prenom','$adress1','$adress2','$city','$postal','$pays','$phone','$vital','$email')";
+				$sql = "INSERT INTO `patient`(`Nom`,`Prenom`,`Adresse1`,`Adresse2`,`Ville`,`Code_Postal`,`Pays`,`Tel`,`Carte_Vitale`,`E-mail`) VALUES ('$name','$prenom','$adress1','$adress2','$city','$postal','$pays','$phone','$vital','$email')";
 				$result = mysqli_query($db_handle, $sql);
 				echo "vous etes inscrit maintenant. <br>";
 				//ici on met accueil, mais on changera pour la page perso

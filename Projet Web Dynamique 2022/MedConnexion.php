@@ -76,12 +76,12 @@
 			//ici on met accueil, mais on changera pour des pages méta
 			echo '<meta http-equiv="refresh" content="5;URL=Accueil.html">';
 			echo "<br>";
-			echo "Redirection vers l'accueil' dans 5 secondes..";
+			echo "Redirection vers l'accueil' dans 5 secondes...";
 		} 
 		else 
 		{
 			echo "Connexion refusée. Mot de passe invalide.";
-			echo '<meta http-equiv="refresh" content="5;URL=PageLoginAdmin.html">';
+			echo '<meta http-equiv="refresh" content="5;URL=PageLoginMedecin.html">';
 			echo "<br>";
 			echo "Retour à la page de connexion dans 5 secondes";
 		}

@@ -357,7 +357,6 @@ height: 50%;
 
     <div class="Boite" id="boite">
         <div id="emploi">
-            <form>
             <table id="table">
                 <tr>
                 
@@ -370,13 +369,13 @@ height: 50%;
                     <td>Dimanche</td>
                 </tr>
                 <tr>
-                    <td id="LM" classe='L9h'><a href="confirmationrdv.php?id=<?php echo $id ?>jour=<?php echo "Lundi"?>&heure=<?php echo"8h-9h"?>">8h-9h</a></td>
-                    <td>8h-9h</td> 
-                    <td>8h-9h</td> 
-                    <td>8h-9h</td> 
-                    <td>8h-9h</td> 
-                    <td>8h-9h</td> 
-                    <td>8h-9h</td> 
+                    <td id="LM" classe='L9h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Lundi &heure=8h">8h</a></td>
+                    <td>8h</td> 
+                    <td>8h</td> 
+                    <td>8h</td> 
+                    <td>8h</td> 
+                    <td>8h</td> 
+                    <td>8h</td> 
                     
                 </tr>
                 <tr>
@@ -479,7 +478,6 @@ height: 50%;
 
                 
             </table>  
-</form>
         </div>
     </div>
 

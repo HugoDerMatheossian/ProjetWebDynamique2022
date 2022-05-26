@@ -18,6 +18,7 @@ if ($db_found){
             ?><style type="text/css">
                 #LM{
                     background:black;
+                    color:black;
                     pointer-events:none;  
                 }
                 </style> <?php
@@ -33,6 +34,7 @@ if ($db_found){
             ?><style type="text/css">
                 #LA{
                     background:black;
+                    color:black;
                     pointer-events:none;  
                 }
                 </style> <?php
@@ -48,7 +50,8 @@ if ($db_found){
             ?><style type="text/css">
                 #MM{
                     background:black;
-                    pointer-events:none;  
+                    color:black;
+                    pointer-events:none;   
                 }
                 </style> <?php
         }else if($data['MardiMatin']=="S"){
@@ -63,6 +66,7 @@ if ($db_found){
             ?><style type="text/css">
                 #MA{
                     background:black;
+                    color:black;
                     pointer-events:none;  
                 }
                 </style> <?php
@@ -78,7 +82,8 @@ if ($db_found){
             ?><style type="text/css">
                 #MMM{
                     background:black;
-                    pointer-events:none;  
+                    color:black;
+                    pointer-events:none;   
                 }
                 </style> <?php
         }else if($data['MercrediMatin']=="S"){
@@ -93,7 +98,8 @@ if ($db_found){
             ?><style type="text/css">
                 #MMA{
                     background:black;
-                    pointer-events:none;  
+                    color:black;
+                    pointer-events:none;   
                 }
                 </style> <?php
         }else if($data['MercrediAprem']=="S"){
@@ -107,6 +113,7 @@ if ($db_found){
             ?><style type="text/css">
                 #JM{
                     background:black;
+                    color:black;
                     pointer-events:none;  
                 }
                 </style> <?php
@@ -122,7 +129,8 @@ if ($db_found){
             ?><style type="text/css">
                 #JA{
                     background:black;
-                    pointer-events:none;  
+                    color:black;
+                    pointer-events:none; 
                 }
                 </style> <?php
         }else if($data['JeudiAprem']=="S"){
@@ -137,6 +145,7 @@ if ($db_found){
             ?><style type="text/css">
                 #VM{
                     background:black;
+                    color:black;
                     pointer-events:none;  
                 }
                 </style> <?php
@@ -151,7 +160,8 @@ if ($db_found){
             ?><style type="text/css">
                 #VA{
                     background:black;
-                    pointer-events:none;  
+                    color:black;
+                    pointer-events:none;   
                 }
                 </style> <?php
         }else if($data['VendrediAprem']=="S"){
@@ -166,6 +176,7 @@ if ($db_found){
             ?><style type="text/css">
                 #SM{
                     background:black;
+                    color:black;
                     pointer-events:none;  
                 }
                 </style> <?php
@@ -181,7 +192,8 @@ if ($db_found){
             ?><style type="text/css">
                 #SA{
                     background:black;
-                    pointer-events:none;  
+                    color:black;
+                    pointer-events:none;   
                 }
                 </style> <?php
         }else if($data['SamediAprem']=="S"){
@@ -196,6 +208,7 @@ if ($db_found){
             ?><style type="text/css">
                 #DM{
                     background:black;
+                    color:black;
                     pointer-events:none;  
                 }
                 </style> <?php
@@ -210,6 +223,7 @@ if ($db_found){
             ?><style type="text/css">
                 #DA{
                     background:black;
+                    color:black;
                     pointer-events:none;  
                 }
                 </style> <?php
@@ -369,111 +383,115 @@ height: 50%;
                     <td>Dimanche</td>
                 </tr>
                 <tr>
-                    <td id="LM" classe='L9h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Lundi &heure=8h">8h</a></td>
-                    <td>8h</td> 
-                    <td>8h</td> 
-                    <td>8h</td> 
-                    <td>8h</td> 
-                    <td>8h</td> 
-                    <td>8h</td> 
+                    <td id="LM" classe='L8h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Lundi &heure=8h">8h</a></td>
+                    <td id="MM" classe='L8h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Mardi &heure=8h">8h</a></td>
+                    <td id="MMM" classe='L8h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Mercredi &heure=8h">8h</a></td>
+                    <td id="JM" classe='L8h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Jeudi &heure=8h">8h</a></td>
+                    <td id="VM" classe='L8h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Vendredi &heure=8h">8h</a></td>
+                    <td id="SM" classe='L8h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Samedi &heure=8h">8h</a></td>
+                    <td id="DM" classe='L8h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Dimanche &heure=8h">8h</a></td>
                     
                 </tr>
                 <tr>
-                    <td>9h-10h</td>
-                    <td>9h-10h</td>
-                    <td>9h-10h</td>
-                    <td>9h-10h</td>
-                    <td>9h-10h</td>
-                    <td>9h-10h</td>
-                    <td>9h-10h</td>
+                    <td id="LM" classe='L9h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Lundi &heure=9h">9h</a></td>
+                    <td id="MM" classe='L9h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Mardi &heure=9h">9h</a></td>
+                    <td id="MMM" classe='L9h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Mercredi &heure=9h">9h</a></td>
+                    <td id="JM" classe='L9h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Jeudi &heure=9h">9h</a></td>
+                    <td id="VM" classe='L9h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Vendredi &heure=9h">9h</a></td>
+                    <td id="SM" classe='L9h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Samedi &heure=9h">9h</a></td>
+                    <td id="DM" classe='L9h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Dimanche &heure=9h">9h</a></td>
                     
                 </tr>
                 <tr>
-                    <td>10h-11h</td>
-                    <td>10h-11h</td>
-                    <td>10h-11h</td>
-                    <td>10h-11h</td>
-                    <td>10h-11h</td>
-                    <td>10h-11h</td>
-                    <td>10h-11h</td>
+                <td id="LM" classe='L10h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Lundi &heure=10h">10h</a></td>
+                    <td id="MM" classe='L10h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Mardi &heure=10h">10h</a></td>
+                    <td id="MMM" classe='L10h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Mercredi &heure=10h">10h</a></td>
+                    <td id="JM" classe='L10h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Jeudi &heure=10h">10h</a></td>
+                    <td id="VM" classe='L10h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Vendredi &heure=10h">10h</a></td>
+                    <td id="SM" classe='L10h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Samedi &heure=10h">10h</a></td>
+                    <td id="DM" classe='L10h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Dimanche &heure=10h">10h</a></td>
                         
                 </tr>
                 <tr>
-                    <td>11h-12h</td>
-                    <td>11h-12h</td>
-                    <td>11h-12h</td>   
-                    <td>11h-12h</td>
-                    <td>11h-12h</td>
-                    <td>11h-12h</td>
-                    <td>11h-12h</td>
+                <td id="LM" classe='L11h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Lundi &heure=11h">11h</a></td>
+                    <td id="MM" classe='L11h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Mardi &heure=11h">11h</a></td>
+                    <td id="MMM" classe='L11h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Mercredi &heure=11h">11h</a></td>
+                    <td id="JM" classe='L11h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Jeudi &heure=11h">11h</a></td>
+                    <td id="VM" classe='L11h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Vendredi &heure=11h">11h</a></td>
+                    <td id="SM" classe='L11h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Samedi &heure=11h">11h</a></td>
+                    <td id="DM" classe='L11h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Dimanche &heure=11h">11h</a></td>
                 </tr>
                 <tr>
-                    <td>12h-13h</td>
-                    <td>12h-13h</td>
-                    <td>12h-13h</td>
-                    <td>12h-13h</td>
-                    <td>12h-13h</td>
-                    <td>12h-13h</td>
-                    <td>12h-13h</td>
+                <td id="LM" classe='L12h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Lundi &heure=12h">12h</a></td>
+                    <td id="MM" classe='L12h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Mardi &heure=12h">12h</a></td>
+                    <td id="MMM" classe='L12h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Mercredi &heure=12h">12h</a></td>
+                    <td id="JM" classe='L12h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Jeudi &heure=12h">12h</a></td>
+                    <td id="VM" classe='L12h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Vendredi &heure=12h">12h</a></td>
+                    <td id="SM" classe='L12h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Samedi &heure=12h">12h</a></td>
+                    <td id="DM" classe='L12h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Dimanche &heure=12h">12h</a></td>
                     
                 </tr>
                 <tr>
-                    <td>13h-14h</td>
-                    <td>13h-14h</td>
-                    <td>13h-14h</td>
-                    <td>13h-14h</td>
-                    <td>13h-14h</td>
-                    <td>13h-14h</td>
-                    <td>13h-14h</td>
+                <td id="LM" classe='L13h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Lundi &heure=13h">13h</a></td>
+                    <td id="MM" classe='L13h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Mardi &heure=13h">13h</a></td>
+                    <td id="MMM" classe='L13h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Mercredi &heure=13h">13h</a></td>
+                    <td id="JM" classe='L13h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Jeudi &heure=13h">13h</a></td>
+                    <td id="VM" classe='L13h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Vendredi &heure=13h">13h</a></td>
+                    <td id="SM" classe='L13h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Samedi &heure=13h">13h</a></td>
+                    <td id="DM" classe='L13h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Dimanche &heure=13h">13h</a></td>
                     
                 </tr>
                 <tr>
-                    <td>14h-15h</td>
-                    <td>14h-15h</td>
-                    <td>14h-15h</td> 
-                    <td>14h-15h</td>
-                    <td>14h-15h</td>
-                    <td>14h-15h</td>
-                    <td>14h-15h</td>
+                <td id="LA" classe='L14h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Lundi &heure=14h">14h</a></td>
+                    <td id="MA" classe='M14h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Mardi &heure=14h">14h</a></td>
+                    <td id="MMA" classe='MM14h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Mercredi &heure=14h">14h</a></td>
+                    <td id="JA" classe='J14h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Jeudi &heure=14h">14h</a></td>
+                    <td id="VA" classe='V14h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Vendredi &heure=14h">14h</a></td>
+                    <td id="SA" classe='S14h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Samedi &heure=14h">14h</a></td>
+                    <td id="DA" classe='D14h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Dimanche &heure=14h">14h</a></td>
                     
                 </tr>
                 <tr>
-                    <td>15h-16h</td>
-                    <td>15h-16h</td>
-                    <td>15h-16h</td>
-                    <td>15h-16h</td>
-                    <td>15h-16h</td>
-                    <td>15h-16h</td>
-                    <td>15h-16h</td>
+                <td id="LA" classe='L15h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Lundi &heure=15h">15h</a></td>
+                    <td id="MA" classe='M15h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Mardi &heure=15h">15h</a></td>
+                    <td id="MMA" classe='MM15h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Mercredi &heure=15h">15h</a></td>
+                    <td id="JA" classe='J15h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Jeudi &heure=15h">15h</a></td>
+                    <td id="VA" classe='V15h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Vendredi &heure=15h">15h</a></td>
+                    <td id="SA" classe='S15h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Samedi &heure=15h">15h</a></td>
+                    <td id="DA" classe='D15h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Dimanche &heure=15h">15h</a></td>
+                    
                     
                 </tr>
                 <tr>
-                    <td>16h-17h</td>
-                    <td>16h-17h</td>
-                    <td>16h-17h</td>
-                    <td>16h-17h</td>
-                    <td>16h-17h</td>
-                    <td>16h-17h</td>
-                    <td>16h-17h</td>   
+                <td id="LA" classe='L16h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Lundi &heure=16h">16h</a></td>
+                    <td id="MA" classe='M16h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Mardi &heure=16h">16h</a></td>
+                    <td id="MMA" classe='MM16h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Mercredi &heure=16h">16h</a></td>
+                    <td id="JA" classe='J16h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Jeudi &heure=16h">16h</a></td>
+                    <td id="VA" classe='V16h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Vendredi &heure=16h">16h</a></td>
+                    <td id="SA" classe='S16h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Samedi &heure=16h">16h</a></td>
+                    <td id="DA" classe='D16h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Dimanche &heure=16h">16h</a></td>
+                       
                 </tr>
                 <tr>
-                    <td>17h-18h</td>
-                    <td>17h-18h</td>
-                    <td>17h-18h</td>
-                    <td>17h-18h</td>
-                    <td>17h-18h</td>
-                    <td>17h-18h</td>
-                    <td>17h-18h</td>
+                <td id="LA" classe='L17h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Lundi &heure=17h">17h</a></td>
+                    <td id="MA" classe='M17h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Mardi &heure=17h">17h</a></td>
+                    <td id="MMA" classe='MM17h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Mercredi &heure=17h">17h</a></td>
+                    <td id="JA" classe='J17h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Jeudi &heure=17h">17h</a></td>
+                    <td id="VA" classe='V17h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Vendredi &heure=17h">17h</a></td>
+                    <td id="SA" classe='S17h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Samedi &heure=17h">17h</a></td>
+                    <td id="DA" classe='D17h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Dimanche &heure=17h">17h</a></td>
+                    
     
                 </tr>
                 <tr>
-                    <td>18h-19h</td>
-                    <td>18h-19h</td>
-                    <td>18h-19h</td>
-                    <td>18h-19h</td>
-                    <td>18h-19h</td>
-                    <td>18h-19h</td>
-                    <td>18h-19h</td>
+                <td id="LA" classe='L18h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Lundi &heure=18h">18h</a></td>
+                    <td id="MA" classe='M18h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Mardi &heure=18h">18h</a></td>
+                    <td id="MMA" classe='MM18h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Mercredi &heure=18h">18h</a></td>
+                    <td id="JA" classe='J18h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Jeudi &heure=18h">18h</a></td>
+                    <td id="VA" classe='V18h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Vendredi &heure=18h">18h</a></td>
+                    <td id="SA" classe='S18h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Samedi &heure=18h">18h</a></td>
+                    <td id="DA" classe='D18h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Dimanche &heure=18h">18h</a></td>
+                    
                 </tr>
 
                 

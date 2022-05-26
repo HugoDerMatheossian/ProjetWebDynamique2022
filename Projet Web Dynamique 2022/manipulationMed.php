@@ -67,6 +67,12 @@
 					echo "Reactualisation dans 2 secondes..";
 				}else{
 					//on ajoute ce medecin dans notre BDD
+					/*echo "$nom<br>";
+					echo "$prenom<br>";
+					echo "$specialite<br>";
+					echo "$salle<br>";
+					echo "$tel<br>";
+					echo "$mail<br>";*/
 					$sql = "INSERT INTO `medecin`(`Nom`, `Prenom`, `Specialite`, `Salle`, `Tel`,`E-mail`) VALUES ('$nom','$prenom','$specialite','$salle','$tel','$mail')";
 					$result = mysqli_query($db_handle, $sql);
 					echo "ce medecin est inscrit maintenant. <br>";
@@ -91,6 +97,11 @@
 	}
 	//supprimer un medecin
 	else if(isset($_POST['button2'])) {
+		$prenom=isset($_POST["Prenom"])? $_POST["Prenom"] : "";
+		$nom=isset($_POST["Nom"])? $_POST["Nom"] : "";
+		$salle=isset($_POST["Salle"])? $_POST["Salle"] : "";
+		$tel=isset($_POST["Tel"])? $_POST["Tel"] : "";
+		$mail=isset($_POST["Mail"])? $_POST["Mail"] : "";
 		if ($db_found){
 			//on cherche le medecin dans notre bdd
 			$sql = "SELECT * FROM `medecin`";

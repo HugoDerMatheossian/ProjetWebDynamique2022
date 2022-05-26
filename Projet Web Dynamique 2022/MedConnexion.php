@@ -67,12 +67,32 @@
 			$_SESSION['login'] = $_POST['nom'];
 			$_SESSION['email'] = $_POST['email'];
 			$_SESSION['type'] = $type;
-			//requete sql de l'annee derniere...peut être utile peut être
-			/*$sql = "SELECT Numerodetelephone FROM `acheteurs` WHERE Pseudo LIKE '%$login' AND MDP LIKE '%$pass'";
+
+			$sql = "SELECT Prenom FROM `medecin` WHERE Nom LIKE '%$login' AND E-mail LIKE '%$mail'";
 			$result = mysqli_query($db_handle, $sql);
 			$data = mysqli_fetch_assoc($result);
+			$_SESSION['prenom'] = $data['Prenom'];
+			$sql = "SELECT Specialite FROM `medecin` WHERE Nom LIKE '%$login' AND E-mail LIKE '%$mail'";
+			$result = mysqli_query($db_handle, $sql);
+			$data = mysqli_fetch_assoc($result);
+			$_SESSION['specialite'] = $data['Specialite'];
+			$sql = "SELECT Salle FROM `medecin` WHERE Nom LIKE '%$login' AND E-mail LIKE '%$mail'";
+			$result = mysqli_query($db_handle, $sql);
+			$data = mysqli_fetch_assoc($result);
+			$_SESSION['salle'] = $data['Salle'];
+			$sql = "SELECT Tel FROM `medecin` WHERE Nom LIKE '%$login' AND E-mail LIKE '%$mail'";
+			$result = mysqli_query($db_handle, $sql);
+			$data = mysqli_fetch_assoc($result);
+			$_SESSION['tel'] = $data['Tel'];
+			$sql = "SELECT ID_Medecin FROM `medecin` WHERE Nom LIKE '%$login' AND E-mail LIKE '%$mail'";
+			$result = mysqli_query($db_handle, $sql);
+			$data = mysqli_fetch_assoc($result);
+			$_SESSION['Id'] = $data['ID_Medecin'];
+			$sql = "SELECT PDP FROM `medecin` WHERE Nom LIKE '%$login' AND E-mail LIKE '%$mail'";
+			$result = mysqli_query($db_handle, $sql);
+			$data = mysqli_fetch_assoc($result);
+			$_SESSION['photo'] = $data['PDP'];
 
-			$_SESSION['numerotel'] = $data['Numerodetelephone'];*/
 
 			//Lien vers la page suivante
 			//ici on met accueil, mais on changera pour des pages méta

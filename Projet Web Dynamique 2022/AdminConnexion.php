@@ -67,20 +67,26 @@
 			$_SESSION['login'] = $_POST['nom'];
 			$_SESSION['pass'] = $_POST['mdp'];
 			$_SESSION['type'] = $type;
-			//requete sql de l'annee derniere...peut être utile peut être
-			/*$sql = "SELECT Numerodetelephone FROM `acheteurs` WHERE Pseudo LIKE '%$login' AND MDP LIKE '%$pass'";
+			$sql = "SELECT Prenom FROM `admin` WHERE Nom LIKE '%$login' AND Mdp LIKE '%$pass'";
 			$result = mysqli_query($db_handle, $sql);
 			$data = mysqli_fetch_assoc($result);
-
-			$_SESSION['numerotel'] = $data['Numerodetelephone'];*/
+			$_SESSION['prenom'] = $data['Prenom'];
+			$sql = "SELECT 'E-mail' FROM `admin` WHERE Nom LIKE '%$login' AND Mdp LIKE '%$pass'";
+			$result = mysqli_query($db_handle, $sql);
+			$data = mysqli_fetch_assoc($result);
+			$_SESSION['mail'] = $data['E-mail'];
+			$sql = "SELECT ID_Admin FROM `admin` WHERE Nom LIKE '%$login' AND Mdp LIKE '%$pass'";
+			$result = mysqli_query($db_handle, $sql);
+			$data = mysqli_fetch_assoc($result);
+			$_SESSION['Id'] = $data['ID_Admin'];
 
 			//Lien vers la page suivante
 			//ici on met accueil, mais on changera pour des pages méta
-			echo '<meta http-equiv="refresh" content="5;URL=Accueil.html">';
+			echo '<meta http-equiv="refresh" content="5;URL=Admin.php">';
 			echo "<br>";
 			echo '<img src="happy.png" width="400px">';
 			echo "<br>";
-			echo "Redirection vers l'accueil' dans 5 secondes...";
+			echo "Redirection vers votre page dans 5 secondes...";
 		} 
 		else 
 		{

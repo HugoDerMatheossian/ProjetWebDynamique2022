@@ -71,10 +71,6 @@
 			$result = mysqli_query($db_handle, $sql);
 			$data = mysqli_fetch_assoc($result);
 			$_SESSION['prenom'] = $data['Prenom'];
-			$sql = "SELECT 'E-mail' FROM `admin` WHERE Nom LIKE '%$login' AND Mdp LIKE '%$pass'";
-			$result = mysqli_query($db_handle, $sql);
-			$data = mysqli_fetch_assoc($result);
-			$_SESSION['mail'] = $data['E-mail'];
 			$sql = "SELECT ID_Admin FROM `admin` WHERE Nom LIKE '%$login' AND Mdp LIKE '%$pass'";
 			$result = mysqli_query($db_handle, $sql);
 			$data = mysqli_fetch_assoc($result);

@@ -12,7 +12,7 @@ if(empty($_SESSION['type'])||($_SESSION['type'])!="admin")
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Administrateur</title>
+	<title>Management du Laboratoire</title>
 	<style type="text/css">
 
 		#header {
@@ -74,22 +74,6 @@ if(empty($_SESSION['type'])||($_SESSION['type'])!="admin")
 	<div id="header"> 
 		<h1>Omnes Santé<img src="logo.png" height="70px" ></h1>
 	</div>
-	<h1><?php 
-	echo $_SESSION['prenom'],' ', $_SESSION['login'];
-	?></h1>
-	<div id="nav">
-		<hr>
-			<table>
-				<br>
-				<a href="Accueil.html" class="bouton" style="width: 250px">Accueil</a>
-				<a href="GererMedecins.php" class="bouton" style="width: 250px">Gérer les médecins</a>
-				<a href="GererLabo.php" class="bouton" style="width: 250px">Gérer le laboratoire</a>
-				<a href="" class="bouton" style="width: 250px">Créer les CV des médecins</a>
-				<a href="deconnexion.php" class="bouton" style="width: 250px">Deconnexion</a>
-			</table>
-		</hr>
-	</div>
-	<?php print_r($_SESSION); ?>
 	<div id="footer">
 		<footer>
 		<small>
@@ -98,6 +82,6 @@ if(empty($_SESSION['type'])||($_SESSION['type'])!="admin")
 			</hr>
 		</small>
 	</footer>
-	</div>	
+	</div>
 </body>
 </html>

@@ -7,12 +7,29 @@ if(empty($_SESSION['type'])||($_SESSION['type'])!="medecin")
   echo '<meta http-equiv="refresh" content="0;URL=PageLoginMedecin.html">';
   exit();
 }
+
+//On identifie la base de donnees 
+$database = "omnes_sante";
+
+//On s'y connecte
+$db_handle = mysqli_connect('localhost', 'root', '');
+$db_found = mysqli_select_db($db_handle, $database);
+
+$nom=$_SESSION['login'];
+$email=$_SESSION['email'];
+
+$sql = "SELECT Prenom FROM `medecin` WHERE Nom LIKE '%$nom' AND 'E-mail' LIKE '%$email'";
+$result = mysqli_query($db_handle, $sql);
+$data = mysqli_fetch_assoc($result);
+$prenom = $data;
+
+
 ?>
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Management du Laboratoire</title>
+	<title><?php  echo "Dr ".$_SESSION['login']; ?></title>
 	<style type="text/css">
 
 		#header {

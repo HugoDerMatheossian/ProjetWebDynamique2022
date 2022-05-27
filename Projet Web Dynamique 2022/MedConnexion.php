@@ -68,30 +68,30 @@
 			$_SESSION['email'] = $_POST['email'];
 			$_SESSION['type'] = $type;
 
-			/*$sql = "SELECT Prenom FROM `medecin` WHERE Nom LIKE '%$login' AND 'E-mail' LIKE '%$mail'";
+			$sql = "SELECT Prenom FROM `medecin` WHERE Nom LIKE '%$login' AND 'E-mail' LIKE '%$mail'";
 			$result = mysqli_query($db_handle, $sql);
 			$data = mysqli_fetch_assoc($result);
-			$_SESSION['prenom'] = $data['Prenom'];
+			$_SESSION['prenom'] = $data;
 			$sql = "SELECT Specialite FROM `medecin` WHERE Nom LIKE '%$login' AND 'E-mail' LIKE '%$mail'";
 			$result = mysqli_query($db_handle, $sql);
 			$data = mysqli_fetch_assoc($result);
-			$_SESSION['specialite'] = $data['Specialite'];
+			$_SESSION['specialite'] = $data;
 			$sql = "SELECT Salle FROM `medecin` WHERE Nom LIKE '%$login' AND 'E-mail' LIKE '%$mail'";
 			$result = mysqli_query($db_handle, $sql);
 			$data = mysqli_fetch_assoc($result);
-			$_SESSION['salle'] = $data['Salle'];
+			$_SESSION['salle'] = $data;
 			$sql = "SELECT Tel FROM `medecin` WHERE Nom LIKE '%$login' AND 'E-mail' LIKE '%$mail'";
 			$result = mysqli_query($db_handle, $sql);
 			$data = mysqli_fetch_assoc($result);
-			$_SESSION['tel'] = $data['Tel'];
+			$_SESSION['tel'] = $data;
 			$sql = "SELECT ID_Medecin FROM `medecin` WHERE Nom LIKE '%$login' AND 'E-mail' LIKE '%$mail'";
 			$result = mysqli_query($db_handle, $sql);
 			$data = mysqli_fetch_assoc($result);
-			$_SESSION['Id'] = $data['ID_Medecin'];
+			$_SESSION['Id'] = $data;
 			$sql = "SELECT PDP FROM `medecin` WHERE Nom LIKE '%$login' AND 'E-mail' LIKE '%$mail'";
 			$result = mysqli_query($db_handle, $sql);
 			$data = mysqli_fetch_assoc($result);
-			$_SESSION['photo'] = $data['PDP'];*/
+			$_SESSION['photo'] = $data;
 
 
 			//Lien vers la page suivante

@@ -21,7 +21,7 @@
 	while($data = mysqli_fetch_assoc($result))
 	{
 		$arraylogin[$compteur] = $data['Nom'];
-		$arraymail[$compteur] = $data['E-mail'];//////////
+		$arraymail[$compteur] = $data['E-mail'];
 		$compteur = $compteur + 1;
 	}
 
@@ -64,35 +64,24 @@
 			//On demarre une session
 			session_start();
 
-			$_SESSION['login'] = $_POST['nom'];
-			$_SESSION['email'] = $_POST['email'];
-			$_SESSION['type'] = $type;
-
-			$sql = "SELECT Prenom FROM `medecin` WHERE Nom LIKE '%$login' AND 'E-mail' LIKE '%$mail'";
+			
+			$sql = "SELECT * FROM `medecin`";
 			$result = mysqli_query($db_handle, $sql);
-			$data = mysqli_fetch_assoc($result);
-			$_SESSION['prenom'] = $data;
-			$sql = "SELECT Specialite FROM `medecin` WHERE Nom LIKE '%$login' AND 'E-mail' LIKE '%$mail'";
-			$result = mysqli_query($db_handle, $sql);
-			$data = mysqli_fetch_assoc($result);
-			$_SESSION['specialite'] = $data;
-			$sql = "SELECT Salle FROM `medecin` WHERE Nom LIKE '%$login' AND 'E-mail' LIKE '%$mail'";
-			$result = mysqli_query($db_handle, $sql);
-			$data = mysqli_fetch_assoc($result);
-			$_SESSION['salle'] = $data;
-			$sql = "SELECT Tel FROM `medecin` WHERE Nom LIKE '%$login' AND 'E-mail' LIKE '%$mail'";
-			$result = mysqli_query($db_handle, $sql);
-			$data = mysqli_fetch_assoc($result);
-			$_SESSION['tel'] = $data;
-			$sql = "SELECT ID_Medecin FROM `medecin` WHERE Nom LIKE '%$login' AND 'E-mail' LIKE '%$mail'";
-			$result = mysqli_query($db_handle, $sql);
-			$data = mysqli_fetch_assoc($result);
-			$_SESSION['Id'] = $data;
-			$sql = "SELECT PDP FROM `medecin` WHERE Nom LIKE '%$login' AND 'E-mail' LIKE '%$mail'";
-			$result = mysqli_query($db_handle, $sql);
-			$data = mysqli_fetch_assoc($result);
-			$_SESSION['photo'] = $data;
-
+			while($data = mysqli_fetch_assoc($result)){
+				if($data['Nom']==$_POST['nom']){
+					if ($data['E-mail']==$_POST['email']) {
+						$_SESSION['prenom']= $data['Prenom'];
+						$_SESSION['login'] = $_POST['nom'];
+						$_SESSION['email'] = $_POST['email'];
+						$_SESSION['type'] = $type;
+						$_SESSION['specialite'] = $data['Specialite'];
+						$_SESSION['salle'] = $data['Salle'];
+						$_SESSION['tel'] = $data['Tel'];
+						$_SESSION['Id'] = $data['ID_Medecin'];
+						$_SESSION['photo'] = $data['PDP'];
+					}
+				}
+			}
 
 			//Lien vers la page suivante
 
@@ -100,7 +89,7 @@
 			echo "<br>";
 			echo '<img src="happy.png" width="400px">';
 			echo "<br>";
-			echo "Redirection vers l'accueil' dans 5 secondes...";
+			echo "Redirection vers votre page dans 5 secondes...";
 		} 
 		else 
 		{

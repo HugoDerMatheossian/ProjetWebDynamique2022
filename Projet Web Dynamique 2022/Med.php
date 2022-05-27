@@ -15,21 +15,13 @@ $database = "omnes_sante";
 $db_handle = mysqli_connect('localhost', 'root', '');
 $db_found = mysqli_select_db($db_handle, $database);
 
-$nom=$_SESSION['login'];
-$email=$_SESSION['email'];
-
-$sql = "SELECT Prenom FROM `medecin` WHERE Nom LIKE '%$nom' AND 'E-mail' LIKE '%$email'";
-$result = mysqli_query($db_handle, $sql);
-$data = mysqli_fetch_assoc($result);
-$prenom = $data;
-
 
 ?>
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
-	<title><?php  echo "Dr ".$_SESSION['login']; ?></title>
+	<title><?php  echo "Dr ".$_SESSION['prenom']." ".$_SESSION['login']; ?></title>
 	<style type="text/css">
 
 		#header {
@@ -90,6 +82,18 @@ $prenom = $data;
 <body>
 	<div id="header"> 
 		<h1>Omnes Santé<img src="logo.png" height="70px" ></h1>
+	</div>
+	<div id="nav">
+		<hr>
+			<table>
+				<br>
+				<a href="Accueil.html" class="bouton" style="width: 250px">Accueil</a>
+				<a href="" class="bouton" style="width: 250px">BOUTON1</a>
+				<a href="" class="bouton" style="width: 250px">BOUTON2</a>
+				<a href="" class="bouton" style="width: 250px">BOUTON3</a>
+				<a href="deconnexion.php" class="bouton" style="width: 250px">Deconnexion</a>
+			</table>
+		</hr>
 	</div>
 	<div id="footer">
 		<footer>

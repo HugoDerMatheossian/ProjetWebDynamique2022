@@ -1,6 +1,685 @@
 <!---Idée pour l'arrangement des créneaux ainsi que la prise de réservation donner par ALEXIS AUBLET TD3-->
 
+<?php  
+$database="omnes_sante";
 
+// on se connecte ensuite
+$db_handle=mysqli_connect("localhost","root","");
+$db_found = mysqli_select_db($db_handle,$database);
+if ($db_found){
+
+    $id=$_GET['id']; 
+    echo $id;
+  $sql = "SELECT * FROM rdv_medecin WHERE ID_Medecin = $id";
+    $result = mysqli_query($db_handle,$sql);
+    while ($data = mysqli_fetch_assoc($result)){
+        echo "J'ai un rdv le  :". $data['Jour']; 
+        echo "à  :". $data['Heure'];
+        if (mysqli_num_rows($result) == 0){
+            
+        }
+        else{
+             switch($data['Jour'])
+            {
+                case 'Lundi':
+                    echo "J'ai un rdv Lundi";
+                    switch($data['Heure']){
+                        case '8h':
+                            echo "J'ai déja un rdv LUNDI 8h";
+                            ?> <style type="text/css">
+                                .L8h{
+                                    background : red;
+                                    pointer-events: none;
+                                }
+                                </style> <?php 
+                                break;
+                                case '9h':
+                                    ?> <style type="text/css">
+                                        .L9h{
+                                            background : red;
+                                            pointer-events: none;
+                                        }
+                                     </style> <?php 
+                                 break;
+                                 case '10h':
+                                    ?> <style type="text/css">
+                                        .L10h{
+                                            background : red;
+                                            pointer-events: none;
+                                        }
+                                        </style> <?php 
+                                 break;
+                                 case '11h':
+                                    ?> <style type="text/css">
+                                        .L11h{
+                                            background : red;
+                                            pointer-events: none;
+                                        }
+                                        </style> <?php 
+                                 break;
+                                 case '12h':
+                                    ?> <style type="text/css">
+                                        .L12h{
+                                            background : red;
+                                            pointer-events: none;
+                                        }
+                                        </style> <?php 
+                                 break;
+                                 case '13h':
+                                    ?> <style type="text/css">
+                                        .L13h{
+                                            background : red;
+                                            pointer-events: none;
+                                        }
+                                        </style> <?php 
+                                 break;
+                                 case '14h':
+                                    ?> <style type="text/css">
+                                        .L14h{
+                                            background : red;
+                                            pointer-events: none;
+                                        }
+                                        </style> <?php 
+                                break;
+                                case '15h':
+                                    ?> <style type="text/css">
+                                        .L15h{
+                                            background : red;
+                                            pointer-events: none;
+                                        }
+                                        </style> <?php 
+                                 break;
+                                case '16h':
+                                    ?> <style type="text/css">
+                                        .L16h{
+                                            background : red;
+                                           pointer-events: none;
+                                                }
+                                    </style> <?php 
+                                 break;
+                                 case '17h':
+                                    ?> <style type="text/css">
+                                        .L17h{
+                                            background : red;
+                                            pointer-events: none;
+                                        }
+                                        </style> <?php 
+                                 break;
+                                 case '18h':
+                                    ?> <style type="text/css">
+                                        .L18h{
+                                            background : red;
+                                            pointer-events: none;
+                                        }
+                                        </style> <?php 
+                                 break;
+                    }
+                    break;
+                    case'Mardi':
+                        switch($data['Heure']){
+                            case "8h":
+                                echo "COUCOU";
+                                ?> <style type="text/css">
+                                    .M8h{
+                                       background:red;
+                                    }
+                                    </style> <?php 
+                                    break;
+                                    case '9h':
+                                        ?> <style type="text/css">
+                                            .M9h{
+                                                background : red;
+                                                pointer-events: none;
+                                            }
+                                         </style> <?php 
+                                     break;
+                                     case '10h':
+                                        ?> <style type="text/css">
+                                            .M10h{
+                                                background : red;
+                                                pointer-events: none;
+                                            }
+                                            </style> <?php 
+                                     break;
+                                     case '11h':
+                                        ?> <style type="text/css">
+                                            .M11h{
+                                                background : red;
+                                                pointer-events: none;
+                                            }
+                                            </style> <?php 
+                                     break;
+                                     case '12h':
+                                        ?> <style type="text/css">
+                                            .M12h{
+                                                background : red;
+                                                pointer-events: none;
+                                            }
+                                            </style> <?php 
+                                     break;
+                                     case '13h':
+                                        ?> <style type="text/css">
+                                            .M13h{
+                                                background : red;
+                                                pointer-events: none;
+                                            }
+                                            </style> <?php 
+                                     break;
+                                     case '14h':
+                                        ?> <style type="text/css">
+                                            .M14h{
+                                                background : red;
+                                                pointer-events: none;
+                                            }
+                                            </style> <?php 
+                                    break;
+                                    case '15h':
+                                        ?> <style type="text/css">
+                                            .M15h{
+                                                background : red;
+                                                pointer-events: none;
+                                            }
+                                            </style> <?php 
+                                     break;
+                                    case '16h':
+                                        ?> <style type="text/css">
+                                            .M16h{
+                                                background : red;
+                                               pointer-events: none;
+                                                    }
+                                        </style> <?php 
+                                     break;
+                                     case '17h':
+                                        ?> <style type="text/css">
+                                            .M17h{
+                                                background : red;
+                                                pointer-events: none;
+                                            }
+                                            </style> <?php 
+                                     break;
+                                     case '18h':
+                                        ?> <style type="text/css">
+                                            .M18h{
+                                                background : red;
+                                                pointer-events: none;
+                                            }
+                                            </style> <?php 
+                                     break;
+                        }
+                        break;
+                        case'Mercredi':
+                            switch($data['Heure']){
+                                case '8h':
+                                    ?> <style type="text/css">
+                                        .MM8h{
+                                            background : red;
+                                            pointer-events: none;
+                                        }
+                                        </style> <?php 
+                                        break;
+                                        case '9h':
+                                            ?> <style type="text/css">
+                                                .MM9h{
+                                                    background : red;
+                                                    pointer-events: none;
+                                                }
+                                             </style> <?php 
+                                         break;
+                                         case '10h':
+                                            ?> <style type="text/css">
+                                                .MM10h{
+                                                    background : red;
+                                                    pointer-events: none;
+                                                }
+                                                </style> <?php 
+                                         break;
+                                         case '11h':
+                                            ?> <style type="text/css">
+                                                .MM11h{
+                                                    background : red;
+                                                    pointer-events: none;
+                                                }
+                                                </style> <?php 
+                                         break;
+                                         case '12h':
+                                            ?> <style type="text/css">
+                                                .MM12h{
+                                                    background : red;
+                                                    pointer-events: none;
+                                                }
+                                                </style> <?php 
+                                         break;
+                                         case '13h':
+                                            ?> <style type="text/css">
+                                                .MM13h{
+                                                    background : red;
+                                                    pointer-events: none;
+                                                }
+                                                </style> <?php 
+                                         break;
+                                         case '14h':
+                                            ?> <style type="text/css">
+                                                .MM14h{
+                                                    background : red;
+                                                    pointer-events: none;
+                                                }
+                                                </style> <?php 
+                                        break;
+                                        case '15h':
+                                            ?> <style type="text/css">
+                                                .MM15h{
+                                                    background : red;
+                                                    pointer-events: none;
+                                                }
+                                                </style> <?php 
+                                         break;
+                                        case '16h':
+                                            ?> <style type="text/css">
+                                                .MM16h{
+                                                    background : red;
+                                                   pointer-events: none;
+                                                        }
+                                            </style> <?php 
+                                         break;
+                                         case '17h':
+                                            ?> <style type="text/css">
+                                                .MM17h{
+                                                    background : red;
+                                                    pointer-events: none;
+                                                }
+                                                </style> <?php 
+                                         break;
+                                         case '18h':
+                                            ?> <style type="text/css">
+                                                .MM18h{
+                                                    background : red;
+                                                    pointer-events: none;
+                                                }
+                                                </style> <?php 
+                                         break;
+                            }
+                            break;
+                            case'Jeudi':
+                                switch($data['Heure']){
+                                    case '8h':
+                                        ?> <style type="text/css">
+                                            .J8h{
+                                                background : red;
+                                                pointer-events: none;
+                                            }
+                                            </style> <?php 
+                                            break;
+                                            case '9h':
+                                                ?> <style type="text/css">
+                                                    .J9h{
+                                                        background : red;
+                                                        pointer-events: none;
+                                                    }
+                                                 </style> <?php 
+                                             break;
+                                             case '10h':
+                                                ?> <style type="text/css">
+                                                    .J10h{
+                                                        background : red;
+                                                        pointer-events: none;
+                                                    }
+                                                    </style> <?php 
+                                             break;
+                                             case '11h':
+                                                ?> <style type="text/css">
+                                                    .J11h{
+                                                        background : red;
+                                                        pointer-events: none;
+                                                    }
+                                                    </style> <?php 
+                                             break;
+                                             case '12h':
+                                                ?> <style type="text/css">
+                                                    .J12h{
+                                                        background : red;
+                                                        pointer-events: none;
+                                                    }
+                                                    </style> <?php 
+                                             break;
+                                             case '13h':
+                                                ?> <style type="text/css">
+                                                    .J13h{
+                                                        background : red;
+                                                        pointer-events: none;
+                                                    }
+                                                    </style> <?php 
+                                             break;
+                                             case '14h':
+                                                ?> <style type="text/css">
+                                                    .J14h{
+                                                        background : red;
+                                                        pointer-events: none;
+                                                    }
+                                                    </style> <?php 
+                                            break;
+                                            case '15h':
+                                                ?> <style type="text/css">
+                                                    .J15h{
+                                                        background : red;
+                                                        pointer-events: none;
+                                                    }
+                                                    </style> <?php 
+                                             break;
+                                            case '16h':
+                                                ?> <style type="text/css">
+                                                    .J16h{
+                                                        background : red;
+                                                       pointer-events: none;
+                                                            }
+                                                </style> <?php 
+                                             break;
+                                             case '17h':
+                                                ?> <style type="text/css">
+                                                    .J17h{
+                                                        background : red;
+                                                        pointer-events: none;
+                                                    }
+                                                    </style> <?php 
+                                             break;
+                                             case '18h':
+                                                ?> <style type="text/css">
+                                                    .J18h{
+                                                        background : red;
+                                                        pointer-events: none;
+                                                    }
+                                                    </style> <?php 
+                                             break;
+                                }
+                                break;
+                                case'Vendredi':
+                                    switch($data['Heure']){
+                                        case '8h':
+                                            ?> <style type="text/css">
+                                                .V8h{
+                                                    background : red;
+                                                    pointer-events: none;
+                                                }
+                                                </style> <?php 
+                                                break;
+                                                case '9h':
+                                                    ?> <style type="text/css">
+                                                        .V9h{
+                                                            background : red;
+                                                            pointer-events: none;
+                                                        }
+                                                     </style> <?php 
+                                                 break;
+                                                 case '10h':
+                                                    ?> <style type="text/css">
+                                                        .V10h{
+                                                            background : red;
+                                                            pointer-events: none;
+                                                        }
+                                                        </style> <?php 
+                                                 break;
+                                                 case '11h':
+                                                    ?> <style type="text/css">
+                                                        .V11h{
+                                                            background : red;
+                                                            pointer-events: none;
+                                                        }
+                                                        </style> <?php 
+                                                 break;
+                                                 case '12h':
+                                                    ?> <style type="text/css">
+                                                        .V12h{
+                                                            background : red;
+                                                            pointer-events: none;
+                                                        }
+                                                        </style> <?php 
+                                                 break;
+                                                 case '13h':
+                                                    ?> <style type="text/css">
+                                                        .V13h{
+                                                            background : red;
+                                                            pointer-events: none;
+                                                        }
+                                                        </style> <?php 
+                                                 break;
+                                                 case '14h':
+                                                    ?> <style type="text/css">
+                                                        .V14h{
+                                                            background : red;
+                                                            pointer-events: none;
+                                                        }
+                                                        </style> <?php 
+                                                break;
+                                                case '15h':
+                                                    ?> <style type="text/css">
+                                                        .V15h{
+                                                            background : red;
+                                                            pointer-events: none;
+                                                        }
+                                                        </style> <?php 
+                                                 break;
+                                                case '16h':
+                                                    ?> <style type="text/css">
+                                                        .V16h{
+                                                            background : red;
+                                                           pointer-events: none;
+                                                                }
+                                                    </style> <?php 
+                                                 break;
+                                                 case '17h':
+                                                    ?> <style type="text/css">
+                                                        .V17h{
+                                                            background : red;
+                                                            pointer-events: none;
+                                                        }
+                                                        </style> <?php 
+                                                 break;
+                                                 case '18h':
+                                                    ?> <style type="text/css">
+                                                        .V18h{
+                                                            background : red;
+                                                            pointer-events: none;
+                                                        }
+                                                        </style> <?php 
+                                                 break;
+                                    }
+                                    break;
+                                    case'Samedi':
+                                        switch($data['Heure']){
+                                            case '8h':
+                                                ?> <style type="text/css">
+                                                    .S8h{
+                                                        background-color : red;
+                                                        pointer-events: none;
+                                                    }
+                                                    </style> <?php 
+                                            break;
+                                            case '9h':
+                                                        ?> <style type="text/css">
+                                                            .S9h{
+                                                                background : red;
+                                                                pointer-events: none;
+                                                            }
+                                                         </style> <?php 
+                                                     break;
+                                                     case '10h':
+                                                        ?> <style type="text/css">
+                                                            .S10h{
+                                                                background : red;
+                                                                pointer-events: none;
+                                                            }
+                                                            </style> <?php 
+                                                     break;
+                                                     case '11h':
+                                                        ?> <style type="text/css">
+                                                            .S11h{
+                                                                background : red;
+                                                                pointer-events: none;
+                                                            }
+                                                            </style> <?php 
+                                                     break;
+                                                     case '12h':
+                                                        ?> <style type="text/css">
+                                                            .S12h{
+                                                                background : red;
+                                                                pointer-events: none;
+                                                            }
+                                                            </style> <?php 
+                                                     break;
+                                                     case '13h':
+                                                        ?> <style type="text/css">
+                                                            .S13h{
+                                                                background : red;
+                                                                pointer-events: none;
+                                                            }
+                                                            </style> <?php 
+                                                     break;
+                                                     case '14h':
+                                                        ?> <style type="text/css">
+                                                            .S14h{
+                                                                background : red;
+                                                                pointer-events: none;
+                                                            }
+                                                            </style> <?php 
+                                                    break;
+                                                    case '15h':
+                                                        ?> <style type="text/css">
+                                                            .S15h{
+                                                                background : red;
+                                                                pointer-events: none;
+                                                            }
+                                                            </style> <?php 
+                                                     break;
+                                                    case '16h':
+                                                        ?> <style type="text/css">
+                                                            .S16h{
+                                                                background : red;
+                                                               pointer-events: none;
+                                                                    }
+                                                        </style> <?php 
+                                                     break;
+                                                     case '17h':
+                                                        ?> <style type="text/css">
+                                                            .S17h{
+                                                                background : red;
+                                                                pointer-events: none;
+                                                            }
+                                                            </style> <?php 
+                                                     break;
+                                                     case '18h':
+                                                        ?> <style type="text/css">
+                                                            .S18h{
+                                                                background : red;
+                                                                pointer-events: none;
+                                                            }
+                                                            </style> <?php 
+                                                     break;
+                                        }
+                                        break;
+                                        case"Dimanche":
+                                            switch($data['Heure']){
+                                                case "8h":
+                                                    ?> <style type="text/css">
+                                                        .D8h{
+                                                            background : red;
+                                                            pointer-events: none;
+                                                        }
+                                                        </style> <?php 
+                                                        break;
+                                                        case '9h':
+                                                            ?> <style type="text/css">
+                                                                .D9h{
+                                                                    background : red;
+                                                                    pointer-events: none;
+                                                                }
+                                                             </style> <?php 
+                                                         break;
+                                                         case '10h':
+                                                            ?> <style type="text/css">
+                                                                .D10h{
+                                                                    background : red;
+                                                                    pointer-events: none;
+                                                                }
+                                                                </style> <?php 
+                                                         break;
+                                                         case '11h':
+                                                            ?> <style type="text/css">
+                                                                .D11h{
+                                                                    background : red;
+                                                                    pointer-events: none;
+                                                                }
+                                                                </style> <?php 
+                                                         break;
+                                                         case '12h':
+                                                            ?> <style type="text/css">
+                                                                .D12h{
+                                                                    background : red;
+                                                                    pointer-events: none;
+                                                                }
+                                                                </style> <?php 
+                                                         break;
+                                                         case '13h':
+                                                            ?> <style type="text/css">
+                                                                .D13h{
+                                                                    background : red;
+                                                                    pointer-events: none;
+                                                                }
+                                                                </style> <?php 
+                                                         break;
+                                                         case '14h':
+                                                            ?> <style type="text/css">
+                                                                .D14h{
+                                                                    background : red;
+                                                                    pointer-events: none;
+                                                                }
+                                                                </style> <?php 
+                                                        break;
+                                                        case '15h':
+                                                            ?> <style type="text/css">
+                                                                .D15h{
+                                                                    background : red;
+                                                                    pointer-events: none;
+                                                                }
+                                                                </style> <?php 
+                                                         break;
+                                                        case '16h':
+                                                            ?> <style type="text/css">
+                                                                .D16h{
+                                                                    background : red;
+                                                                   pointer-events: none;
+                                                                        }
+                                                            </style> <?php 
+                                                         break;
+                                                         case '17h':
+                                                            ?> <style type="text/css">
+                                                                .D17h{
+                                                                    background : red;
+                                                                    pointer-events: none;
+                                                                }
+                                                                </style> <?php 
+                                                         break;
+                                                         case '18h':
+                                                            ?> <style type="text/css">
+                                                                .D18h{
+                                                                    background : red;
+                                                                    pointer-events: none;
+                                                                }
+                                                                </style> <?php 
+                                                         break;
+                                            }
+                                            break;
+
+            }
+        }
+    }
+}
+// si existe pas 
+else {
+    echo"Database not found";
+}
+
+// on ferme la connection
+mysqli_close($db_handle);
+?>
 
 <?php  
 $database="omnes_sante";
@@ -8,6 +687,8 @@ $db_handle=mysqli_connect("localhost","root","");
 $db_found = mysqli_select_db($db_handle,$database);
 
 if ($db_found){
+
+    
 
     $id=$_GET['id']; 
     $sql ="SELECT * FROM creneaux_medecin  WHERE ID_Medecin=$id ";
@@ -383,114 +1064,114 @@ height: 50%;
                     <td>Dimanche</td>
                 </tr>
                 <tr>
-                    <td id="LM" classe='L8h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Lundi &heure=8h">8h</a></td>
-                    <td id="MM" classe='L8h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Mardi &heure=8h">8h</a></td>
-                    <td id="MMM" classe='L8h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Mercredi &heure=8h">8h</a></td>
-                    <td id="JM" classe='L8h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Jeudi &heure=8h">8h</a></td>
-                    <td id="VM" classe='L8h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Vendredi &heure=8h">8h</a></td>
-                    <td id="SM" classe='L8h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Samedi &heure=8h">8h</a></td>
-                    <td id="DM" classe='L8h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Dimanche &heure=8h">8h</a></td>
+                    <td id="LM" class='L8h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Lundi &heure=8h">8h</a></td>
+                    <td id="MM" class='M8h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Mardi &heure=8h">8h</a></td>
+                    <td id="MMM" class='MM8h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Mercredi &heure=8h">8h</a></td>
+                    <td id="JM" class='J8h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Jeudi &heure=8h">8h</a></td>
+                    <td id="VM" class='V8h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Vendredi &heure=8h">8h</a></td>
+                    <td id="SM" class='S8h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Samedi &heure=8h">8h</a></td>
+                    <td id="DM" class='D8h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Dimanche &heure=8h">8h</a></td>
                     
                 </tr>
                 <tr>
-                    <td id="LM" classe='L9h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Lundi &heure=9h">9h</a></td>
-                    <td id="MM" classe='L9h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Mardi &heure=9h">9h</a></td>
-                    <td id="MMM" classe='L9h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Mercredi &heure=9h">9h</a></td>
-                    <td id="JM" classe='L9h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Jeudi &heure=9h">9h</a></td>
-                    <td id="VM" classe='L9h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Vendredi &heure=9h">9h</a></td>
-                    <td id="SM" classe='L9h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Samedi &heure=9h">9h</a></td>
-                    <td id="DM" classe='L9h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Dimanche &heure=9h">9h</a></td>
+                    <td id="LM" class='L9h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Lundi &heure=9h">9h</a></td>
+                    <td id="MM" class='M9h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Mardi &heure=9h">9h</a></td>
+                    <td id="MMM" class='MM9h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Mercredi &heure=9h">9h</a></td>
+                    <td id="JM" class='J9h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Jeudi &heure=9h">9h</a></td>
+                    <td id="VM" class='V9h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Vendredi &heure=9h">9h</a></td>
+                    <td id="SM" class='S9h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Samedi &heure=9h">9h</a></td>
+                    <td id="DM" class='D9h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Dimanche &heure=9h">9h</a></td>
                     
                 </tr>
                 <tr>
-                <td id="LM" classe='L10h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Lundi &heure=10h">10h</a></td>
-                    <td id="MM" classe='L10h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Mardi &heure=10h">10h</a></td>
-                    <td id="MMM" classe='L10h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Mercredi &heure=10h">10h</a></td>
-                    <td id="JM" classe='L10h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Jeudi &heure=10h">10h</a></td>
-                    <td id="VM" classe='L10h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Vendredi &heure=10h">10h</a></td>
-                    <td id="SM" classe='L10h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Samedi &heure=10h">10h</a></td>
-                    <td id="DM" classe='L10h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Dimanche &heure=10h">10h</a></td>
+                <td id="LM" class='L10h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Lundi &heure=10h">10h</a></td>
+                    <td id="MM" class='M10h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Mardi &heure=10h">10h</a></td>
+                    <td id="MMM" class='MM10h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Mercredi &heure=10h">10h</a></td>
+                    <td id="JM" class='J10h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Jeudi &heure=10h">10h</a></td>
+                    <td id="VM" class='V10h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Vendredi &heure=10h">10h</a></td>
+                    <td id="SM" class='S10h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Samedi &heure=10h">10h</a></td>
+                    <td id="DM" class='D10h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Dimanche &heure=10h">10h</a></td>
                         
                 </tr>
                 <tr>
-                <td id="LM" classe='L11h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Lundi &heure=11h">11h</a></td>
-                    <td id="MM" classe='L11h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Mardi &heure=11h">11h</a></td>
-                    <td id="MMM" classe='L11h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Mercredi &heure=11h">11h</a></td>
-                    <td id="JM" classe='L11h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Jeudi &heure=11h">11h</a></td>
-                    <td id="VM" classe='L11h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Vendredi &heure=11h">11h</a></td>
-                    <td id="SM" classe='L11h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Samedi &heure=11h">11h</a></td>
-                    <td id="DM" classe='L11h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Dimanche &heure=11h">11h</a></td>
+                <td id="LM" class='L11h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Lundi &heure=11h">11h</a></td>
+                    <td id="MM" class='M11h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Mardi &heure=11h">11h</a></td>
+                    <td id="MMM" class='MM11h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Mercredi &heure=11h">11h</a></td>
+                    <td id="JM" class='J11h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Jeudi &heure=11h">11h</a></td>
+                    <td id="VM" class='V11h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Vendredi &heure=11h">11h</a></td>
+                    <td id="SM" class='S11h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Samedi &heure=11h">11h</a></td>
+                    <td id="DM" class='D11h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Dimanche &heure=11h">11h</a></td>
                 </tr>
                 <tr>
-                <td id="LM" classe='L12h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Lundi &heure=12h">12h</a></td>
-                    <td id="MM" classe='L12h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Mardi &heure=12h">12h</a></td>
-                    <td id="MMM" classe='L12h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Mercredi &heure=12h">12h</a></td>
-                    <td id="JM" classe='L12h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Jeudi &heure=12h">12h</a></td>
-                    <td id="VM" classe='L12h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Vendredi &heure=12h">12h</a></td>
-                    <td id="SM" classe='L12h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Samedi &heure=12h">12h</a></td>
-                    <td id="DM" classe='L12h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Dimanche &heure=12h">12h</a></td>
+                <td id="LM" class='L12h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Lundi &heure=12h">12h</a></td>
+                    <td id="MM" class='M12h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Mardi &heure=12h">12h</a></td>
+                    <td id="MMM" class='MM12h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Mercredi &heure=12h">12h</a></td>
+                    <td id="JM" class='J12h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Jeudi &heure=12h">12h</a></td>
+                    <td id="VM" class='V12h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Vendredi &heure=12h">12h</a></td>
+                    <td id="SM" class='S12h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Samedi &heure=12h">12h</a></td>
+                    <td id="DM" class='D12h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Dimanche &heure=12h">12h</a></td>
                     
                 </tr>
                 <tr>
-                <td id="LM" classe='L13h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Lundi &heure=13h">13h</a></td>
-                    <td id="MM" classe='L13h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Mardi &heure=13h">13h</a></td>
-                    <td id="MMM" classe='L13h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Mercredi &heure=13h">13h</a></td>
-                    <td id="JM" classe='L13h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Jeudi &heure=13h">13h</a></td>
-                    <td id="VM" classe='L13h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Vendredi &heure=13h">13h</a></td>
-                    <td id="SM" classe='L13h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Samedi &heure=13h">13h</a></td>
-                    <td id="DM" classe='L13h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Dimanche &heure=13h">13h</a></td>
+                <td id="LM" class='L13h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Lundi &heure=13h">13h</a></td>
+                    <td id="MM" class='M13h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Mardi &heure=13h">13h</a></td>
+                    <td id="MMM" class='MM13h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Mercredi &heure=13h">13h</a></td>
+                    <td id="JM" class='J13h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Jeudi &heure=13h">13h</a></td>
+                    <td id="VM" class='V13h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Vendredi &heure=13h">13h</a></td>
+                    <td id="SM" class='S13h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Samedi &heure=13h">13h</a></td>
+                    <td id="DM" class='D13h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Dimanche &heure=13h">13h</a></td>
                     
                 </tr>
                 <tr>
-                <td id="LA" classe='L14h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Lundi &heure=14h">14h</a></td>
-                    <td id="MA" classe='M14h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Mardi &heure=14h">14h</a></td>
-                    <td id="MMA" classe='MM14h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Mercredi &heure=14h">14h</a></td>
-                    <td id="JA" classe='J14h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Jeudi &heure=14h">14h</a></td>
-                    <td id="VA" classe='V14h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Vendredi &heure=14h">14h</a></td>
-                    <td id="SA" classe='S14h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Samedi &heure=14h">14h</a></td>
-                    <td id="DA" classe='D14h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Dimanche &heure=14h">14h</a></td>
+                <td id="LA" class='L14h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Lundi &heure=14h">14h</a></td>
+                    <td id="MA" class='M14h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Mardi &heure=14h">14h</a></td>
+                    <td id="MMA" class='MM14h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Mercredi &heure=14h">14h</a></td>
+                    <td id="JA" class='J14h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Jeudi &heure=14h">14h</a></td>
+                    <td id="VA" class='V14h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Vendredi &heure=14h">14h</a></td>
+                    <td id="SA" class='S14h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Samedi &heure=14h">14h</a></td>
+                    <td id="DA" class='D14h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Dimanche &heure=14h">14h</a></td>
                     
                 </tr>
                 <tr>
-                <td id="LA" classe='L15h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Lundi &heure=15h">15h</a></td>
-                    <td id="MA" classe='M15h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Mardi &heure=15h">15h</a></td>
-                    <td id="MMA" classe='MM15h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Mercredi &heure=15h">15h</a></td>
-                    <td id="JA" classe='J15h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Jeudi &heure=15h">15h</a></td>
-                    <td id="VA" classe='V15h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Vendredi &heure=15h">15h</a></td>
-                    <td id="SA" classe='S15h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Samedi &heure=15h">15h</a></td>
-                    <td id="DA" classe='D15h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Dimanche &heure=15h">15h</a></td>
+                <td id="LA" class='L15h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Lundi &heure=15h">15h</a></td>
+                    <td id="MA" class='M15h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Mardi &heure=15h">15h</a></td>
+                    <td id="MMA" class='MM15h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Mercredi &heure=15h">15h</a></td>
+                    <td id="JA" class='J15h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Jeudi &heure=15h">15h</a></td>
+                    <td id="VA" class='V15h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Vendredi &heure=15h">15h</a></td>
+                    <td id="SA" class='S15h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Samedi &heure=15h">15h</a></td>
+                    <td id="DA" class='D15h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Dimanche &heure=15h">15h</a></td>
                     
                     
                 </tr>
                 <tr>
-                <td id="LA" classe='L16h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Lundi &heure=16h">16h</a></td>
-                    <td id="MA" classe='M16h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Mardi &heure=16h">16h</a></td>
-                    <td id="MMA" classe='MM16h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Mercredi &heure=16h">16h</a></td>
-                    <td id="JA" classe='J16h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Jeudi &heure=16h">16h</a></td>
-                    <td id="VA" classe='V16h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Vendredi &heure=16h">16h</a></td>
-                    <td id="SA" classe='S16h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Samedi &heure=16h">16h</a></td>
-                    <td id="DA" classe='D16h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Dimanche &heure=16h">16h</a></td>
+                <td id="LA" class='L16h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Lundi &heure=16h">16h</a></td>
+                    <td id="MA" class='M16h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Mardi &heure=16h">16h</a></td>
+                    <td id="MMA" class='MM16h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Mercredi &heure=16h">16h</a></td>
+                    <td id="JA" class='J16h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Jeudi &heure=16h">16h</a></td>
+                    <td id="VA" class='V16h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Vendredi &heure=16h">16h</a></td>
+                    <td id="SA" class='S16h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Samedi &heure=16h">16h</a></td>
+                    <td id="DA" class='D16h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Dimanche &heure=16h">16h</a></td>
                        
                 </tr>
                 <tr>
-                <td id="LA" classe='L17h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Lundi &heure=17h">17h</a></td>
-                    <td id="MA" classe='M17h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Mardi &heure=17h">17h</a></td>
-                    <td id="MMA" classe='MM17h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Mercredi &heure=17h">17h</a></td>
-                    <td id="JA" classe='J17h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Jeudi &heure=17h">17h</a></td>
-                    <td id="VA" classe='V17h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Vendredi &heure=17h">17h</a></td>
-                    <td id="SA" classe='S17h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Samedi &heure=17h">17h</a></td>
-                    <td id="DA" classe='D17h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Dimanche &heure=17h">17h</a></td>
+                <td id="LA" class='L17h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Lundi &heure=17h">17h</a></td>
+                    <td id="MA" class='M17h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Mardi &heure=17h">17h</a></td>
+                    <td id="MMA" class='MM17h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Mercredi &heure=17h">17h</a></td>
+                    <td id="JA" class='J17h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Jeudi &heure=17h">17h</a></td>
+                    <td id="VA" class='V17h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Vendredi &heure=17h">17h</a></td>
+                    <td id="SA" class='S17h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Samedi &heure=17h">17h</a></td>
+                    <td id="DA" class='D17h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Dimanche &heure=17h">17h</a></td>
                     
     
                 </tr>
                 <tr>
-                <td id="LA" classe='L18h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Lundi &heure=18h">18h</a></td>
-                    <td id="MA" classe='M18h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Mardi &heure=18h">18h</a></td>
-                    <td id="MMA" classe='MM18h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Mercredi &heure=18h">18h</a></td>
-                    <td id="JA" classe='J18h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Jeudi &heure=18h">18h</a></td>
-                    <td id="VA" classe='V18h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Vendredi &heure=18h">18h</a></td>
-                    <td id="SA" classe='S18h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Samedi &heure=18h">18h</a></td>
-                    <td id="DA" classe='D18h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Dimanche &heure=18h">18h</a></td>
+                <td id="LA" class='L18h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Lundi &heure=18h">18h</a></td>
+                    <td id="MA" class='M18h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Mardi &heure=18h">18h</a></td>
+                    <td id="MMA" class='MM18h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Mercredi &heure=18h">18h</a></td>
+                    <td id="JA" class='J18h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Jeudi &heure=18h">18h</a></td>
+                    <td id="VA" class='V18h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Vendredi &heure=18h">18h</a></td>
+                    <td id="SA" class='S18h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Samedi &heure=18h">18h</a></td>
+                    <td id="DA" class='D18h'><a href="confirmationrdv.php?&id=<?php echo $id ?>&jour=Dimanche &heure=18h">18h</a></td>
                     
                 </tr>
 
@@ -503,7 +1184,7 @@ height: 50%;
 		<footer>
 		<small>
 			<hr>
-				<pre>Mail:<a href="mailto:hugo.dermatheossian@omnes_sante.fr">hugo.dermatheossian@edu.ece.fr</a>   Téléphone: <em>(+33)1 44 39 06 00</em>       Adresse:37, Quai de Grenelle,75015 Paris</pre>
+				<!--pre>Mail:<a href="mailto:hugo.dermatheossian@omnes_sante.fr">hugo.dermatheossian@edu.ece.fr</a>   Téléphone: <em>(+33)1 44 39 06 00</em>       Adresse:37, Quai de Grenelle,75015 Paris</pre-->
 			</hr>
 		</small>
 	</footer>

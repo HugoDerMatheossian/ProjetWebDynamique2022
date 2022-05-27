@@ -87,6 +87,10 @@ mysqli_close($db_handle);
     background-color: #4169E1;
     color: white;
 }
+
+#stream_wrapper_register{
+    display:flex;
+}
 .boite1
 {
     text-align: center;
@@ -113,20 +117,22 @@ mysqli_close($db_handle);
     -o-border-radius: 15px;
     width:40% ;
     height: 60%;
-   float:right;
+    float:right;
 }
 .police {
-font-size:x-large;
-font-weight: bold;
-
+    font-size:x-large;
+    font-weight: bold;
+    text-align:center;
+    margin-left:auto;
+    margin-right:auto;
 }
 .cercle { 
 	width : 20%;
 	height : 40%;
    clip-path:ellipse(50% 50%);
    text-align: center;
-   float: left;
-	
+   margin-left:auto;
+   margin-right:auto;
 }
 
 
@@ -148,38 +154,36 @@ font-weight: bold;
 				<a href="choixTypeCompte.html" class="bouton" style="width: 200px">Votre Compte</a>
 			</table>
 	</div>
-<div class="boite1">
-    <div class="cercle">
-			<?php 
-             echo('<img src="' . $data["PDP"] . '">');
-            ?>
-		</div>
-        <div class="police">			<?php 
-             echo "Dr ".$data["Nom"]." ".$data["Prenom"]."<br>";
-            ?></div>
-
+<div id="wrapper">
+    <div class="boite1">
+            <div class="police">			<?php 
+                echo "Dr ".$data["Nom"]." ".$data["Prenom"]."<br>";
+                ?></div>
+            <div class="cercle">
+                <?php 
+                echo('<img src="' . $data["PDP"] . '">');
+                ?>
+            </div>
+    </div>
+            <div class="boite2">
+                <div class="police">
+                    <?php 
+                        echo ("Médecin :<br>");
+                        echo($data["Specialite"]);
+                        echo("<br><br>");
+                        echo ("Salle :<br>");
+                        echo($data["Salle"]);
+                        echo("<br><br>");
+                        echo("Téléphone :<br>");
+                        echo($data["Tel"]);
+                        echo("<br><br>");
+                        echo("Adresse E-mail :<br>");
+                        echo($data["E-mail"]);
+                        echo("<br><br>");
+                    ?>
+                </div>
+            </div>
 </div>
-        <div class="boite2">
-
-           
-            <br>
-            <div class="police">			<?php 
-             echo "Médecin ".$data["Specialite"]."<br>";
-            ?></div>
-            <br>
-            <div class="police">			<?php 
-             echo "Salle :,".$data["Salle"]."<br>";
-            ?></div>
-            <br>
-            <div class="police">			<?php 
-            echo "Téléphone : ".$data["Tel"]."<br>";
-            ?></div>
-            <br>
-            <div class="police">			<?php 
-             echo "Adresse E-mail : ".$data["E-mail"]."<br>";
-            ?></div>
-
-        </div>
         <div>
         <?php 
                 echo ' <a href="priserdv.php?id='.$id.'">' ."Prendre un RDV".' </a>';

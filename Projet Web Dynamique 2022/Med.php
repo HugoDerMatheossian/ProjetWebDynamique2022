@@ -15,7 +15,6 @@ $database = "omnes_sante";
 $db_handle = mysqli_connect('localhost', 'root', '');
 $db_found = mysqli_select_db($db_handle, $database);
 
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -77,6 +76,9 @@ $db_found = mysqli_select_db($db_handle, $database);
 		h1{
 			text-align:center;
 		}
+		#infos-droite{
+			text-align:center;
+		}
  </style>
 </head>
 <body>
@@ -87,13 +89,28 @@ $db_found = mysqli_select_db($db_handle, $database);
 		<hr>
 			<table>
 				<br>
-				<a href="Accueil.html" class="bouton" style="width: 250px">Accueil</a>
-				<a href="" class="bouton" style="width: 250px">BOUTON1</a>
-				<a href="" class="bouton" style="width: 250px">BOUTON2</a>
-				<a href="" class="bouton" style="width: 250px">BOUTON3</a>
-				<a href="deconnexion.php" class="bouton" style="width: 250px">Deconnexion</a>
+				<a href="Accueil.html" class="bouton" style="width: 300px">Accueil</a>
+				<a href="" class="bouton" style="width: 300px">Accéder à l'emploi du temps</a>
+				<a href="" class="bouton" style="width: 300px">Modifier Photo</a>
+				<a href="deconnexion.php" class="bouton" style="width: 300px">Deconnexion</a>
 			</table>
 		</hr>
+	</div>
+	<div id="infos">
+		<div id="infos-gauche" style="float:left" width="500px">
+			<img src="<?php echo $_SESSION['photo'];  ?>" height="400px" width="400px">
+		</div>
+		<div id="infos-droite" style="float:center" >
+			<p><b>Vos Informations:<br></b></p>
+			<p>Nom: <?php echo $_SESSION['login'];?><br></p>
+			<p>Prénom: <?php echo $_SESSION['prenom'];?><br></p>
+			<p>N° Téléphone: <?php echo $_SESSION['tel'];?><br></p>
+			<p>Spécialité: <?php echo $_SESSION['specialite'];?><br></p>
+			<p>Salle: <?php echo $_SESSION['salle'];?><br></p>
+			<p>Spécialité: <?php echo $_SESSION['specialite'];?><br></p>
+			<p>E-mail	: <?php echo $_SESSION['email'];?><br></p>
+
+		</div>
 	</div>
 	<div id="footer">
 		<footer>

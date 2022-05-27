@@ -89,7 +89,6 @@ if(empty($_SESSION['type'])||($_SESSION['type'])!="admin")
 			</table>
 		</hr>
 	</div>
-	<?php print_r($_SESSION); ?>
 	<div id="footer">
 		<footer>
 		<small>

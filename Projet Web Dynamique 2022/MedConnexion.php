@@ -68,7 +68,7 @@
 			$_SESSION['email'] = $_POST['email'];
 			$_SESSION['type'] = $type;
 
-			$sql = "SELECT Prenom FROM `medecin` WHERE Nom LIKE '%$login' AND 'E-mail' LIKE '%$mail'";
+			/*$sql = "SELECT Prenom FROM `medecin` WHERE Nom LIKE '%$login' AND 'E-mail' LIKE '%$mail'";
 			$result = mysqli_query($db_handle, $sql);
 			$data = mysqli_fetch_assoc($result);
 			$_SESSION['prenom'] = $data['Prenom'];
@@ -91,7 +91,7 @@
 			$sql = "SELECT PDP FROM `medecin` WHERE Nom LIKE '%$login' AND 'E-mail' LIKE '%$mail'";
 			$result = mysqli_query($db_handle, $sql);
 			$data = mysqli_fetch_assoc($result);
-			$_SESSION['photo'] = $data['PDP'];
+			$_SESSION['photo'] = $data['PDP'];*/
 
 
 			//Lien vers la page suivante

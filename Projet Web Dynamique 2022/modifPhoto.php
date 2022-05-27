@@ -97,19 +97,17 @@ $db_found = mysqli_select_db($db_handle, $database);
 			</table>
 		</hr>
 	</div>
+	<h1>Modifier votre Photo de Profil:</h1>
 	<div id="infos">
 		<div id="infos-gauche" style="float:left" width="500px">
 			<img src="<?php echo $_SESSION['photo'];  ?>" height="400px" width="400px">
 		</div>
 		<div id="infos-droite" style="float:center" >
-			<p><b>Vos Informations:<br></b></p>
-			<p>Nom: <?php echo $_SESSION['login'];?><br></p>
-			<p>Prénom: <?php echo $_SESSION['prenom'];?><br></p>
-			<p>N° Téléphone: <?php echo $_SESSION['tel'];?><br></p>
-			<p>Spécialité: <?php echo $_SESSION['specialite'];?><br></p>
-			<p>Salle: <?php echo $_SESSION['salle'];?><br></p>
-			<p>E-mail	: <?php echo $_SESSION['email'];?><br></p>
-
+			<form action="updatePhoto.php" method="post" enctype="multipart/form-data">
+			  <u>Sélectionner l'image à mettre:</u><br>
+			  <input type="file" name="image" id="image" ><br><br>	
+			  <input type="submit"  name="submit">
+			</form>
 		</div>
 	</div>
 	<div id="footer">

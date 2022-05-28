@@ -23,6 +23,19 @@ $tab = $res->fetchAll();
 <meta name="viewport" content="width=device-width"/>
     </head>
     <body>
+
+    <div id="nav">
+		<hr>
+			<table>
+				<br>
+				<a href="Accueil.html" class="bouton" style="width: 250px">Accueil</a>
+				<a href="toutparcourir.html" class="bouton" style="width: 250px">Tout Parcourir</a>
+				<a href="recherche.php" class="bouton" style="width: 250px">Recherche</a>
+				<a href="rdv.html" class="bouton" style="width: 250px">Rendez-vous</a>
+				<a href="choixTypeCompte.html" class="bouton" style="width: 250px">Votre Compte</a>
+			</table>
+		</hr>
+	</div>
         <form name ="fo" method="get" action="">
             <input type="text" name="keywords" value="<?php echo $keywords?>" placeholder="Mots-clés" />
             <input type="submit" name="valider" placeholder="Rechercher" />
@@ -42,6 +55,15 @@ $tab = $res->fetchAll();
                 <?php } ?>
             </ol>
         </div>
+        <div id="footer">
+		<footer>
+		<small>
+			<hr>
+				<pre>Mail:<a href="mailto:hugo.dermatheossian@omnes_sante.fr">hugo.dermatheossian@edu.ece.fr</a>   Téléphone: <em>(+33)1 44 39 06 00</em>       Adresse:37, Quai de Grenelle,75015 Paris</pre>
+			</hr>
+		</small>
+	</footer>
+	</div>	
 
         <?php } ?>
 

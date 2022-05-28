@@ -149,14 +149,14 @@ mysqli_close($db_handle);
 	<div id="nav">
 			<table>
 				<br>
-				<a href="Accueil.php" class="bouton" style="width: 200px">Accueil</a>
+				<a href="Accueil.php" class="bouton" style="width: 160px">Accueil</a>
 				<?php 
                     switch($_SESSION['type']){
                         case 'patient':
                             echo '<a href="toutparcourir.html" class="bouton" style="width: 250px">Tout Parcourir</a>';
                             break;
                         default :
-                            echo '<a href="" class="bouton" style="width: 250px">Tout Parcourir</a>';
+                            echo '<a href="" class="bouton" style="width: 160px">Tout Parcourir</a>';
                             break;
                     }
                 ?>
@@ -166,7 +166,7 @@ mysqli_close($db_handle);
                             echo '<a href="recherche.php" class="bouton" style="width: 250px">Recherche</a>';
                             break;
                         default :
-                            echo '<a href="" class="bouton" style="width: 250px">Recherche</a>';
+                            echo '<a href="" class="bouton" style="width: 160px">Recherche</a>';
                             break;
                     }
                 ?>
@@ -179,7 +179,7 @@ mysqli_close($db_handle);
                             echo '<a href="rdv.html" class="bouton" style="width: 250px">Rendez-vous</a>';
                             break;
                         default :
-                            echo '<a href="" class="bouton" style="width: 250px">Rendez-vous</a>';
+                            echo '<a href="" class="bouton" style="width: 160px">Rendez-vous</a>';
                             break;
                     }
                 ?>
@@ -195,7 +195,7 @@ mysqli_close($db_handle);
                         echo '<a href="" class="bouton" style="width: 250px">Votre Compte</a>';
                         break;
                     default:
-                        echo '<a href="choixTypeCompte.html" class="bouton" style="width: 250px">Connexion</a>';
+                        echo '<a href="choixTypeCompte.html" class="bouton" style="width: 160px">Connexion</a>';
                         break;
                     }   
                 ?>
@@ -241,7 +241,7 @@ mysqli_close($db_handle);
 		<footer>
 		<small>
 			<hr>
-				<pre>Mail:<a href="mailto:hugo.dermatheossian@omnes_sante.fr">hugo.dermatheossian@edu.ece.fr</a>   Téléphone: <em>(+33)1 44 39 06 00</em>       Adresse:37, Quai de Grenelle,75015 Paris</pre>
+				<pre>Mail:<a href="mailto:hugo.dermatheossian@omnes_sante.fr">hugo.dermatheossian@edu.ece.fr</a>   Téléphone: <em>(+33)1 44 39 06 00</em>       Adresse: 37, Quai de Grenelle,75015 Paris</pre>
 			</hr>
 		</small>
 	</footer>

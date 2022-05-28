@@ -247,8 +247,8 @@
 				$sql = "INSERT INTO `patient`(`Nom`,`Prenom`,`Adresse1`,`Adresse2`,`Ville`,`Code_Postal`,`Pays`,`Tel`,`Carte_Vitale`,`E-mail`) VALUES ('$name','$prenom','$adress1','$adress2','$city','$postal','$pays','$phone','$vital','$email')";
 				$result = mysqli_query($db_handle, $sql);
 				echo "vous etes inscrit maintenant. <br>";
-				//ici on met accueil, mais on changera pour la page perso
-				echo '<meta http-equiv="refresh" content="5;URL=Accueil.html">';
+				//ici on met accueil
+				echo '<meta http-equiv="refresh" content="5;URL=Accueil.php">';
 				echo "<br>";
 				echo '<img src="happy.png" width="400px">';
 				echo "<br>";

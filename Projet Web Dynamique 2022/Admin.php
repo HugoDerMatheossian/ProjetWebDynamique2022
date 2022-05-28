@@ -81,7 +81,7 @@ if(empty($_SESSION['type'])||($_SESSION['type'])!="admin")
 		<hr>
 			<table>
 				<br>
-				<a href="Accueil.html" class="bouton" style="width: 250px">Accueil</a>
+				<a href="Accueil.php" class="bouton" style="width: 250px">Accueil</a>
 				<a href="GererMedecins.php" class="bouton" style="width: 250px">Gérer les médecins</a>
 				<a href="GererLabo.php" class="bouton" style="width: 250px">Gérer le laboratoire</a>
 				<a href="" class="bouton" style="width: 250px">Créer les CV des médecins</a>

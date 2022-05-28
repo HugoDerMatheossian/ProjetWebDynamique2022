@@ -10,6 +10,6 @@
 	session_destroy();
 
 	//On redirige le visiteur a la page d'accueil
-	header('location: accueil.html');
+	header('location: accueil.php');
 
 ?>

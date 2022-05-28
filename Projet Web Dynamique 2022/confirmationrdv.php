@@ -4,6 +4,8 @@ $database="omnes_sante";
 // on se connecte ensuite
 $db_handle=mysqli_connect("localhost","root","");
 $db_found = mysqli_select_db($db_handle,$database);
+
+session_start();
 if ($db_found){
 
     echo $_GET['id']; 
@@ -133,11 +135,11 @@ font-weight: bold;
 	<div id="nav">
 			<table>
 				<br>
-				<a href="Accueil.html" class="bouton" style="width: 200px">Accueil</a>
+				<a href="Accueil.php" class="bouton" style="width: 200px">Accueil</a>
 				<a href="toutparcourir.html" class="bouton" style="width: 200px">Tout Parcourir</a>
 				<a href="recherche.php" class="bouton" style="width: 200px">Recherche</a>
 				<a href="rdv.html" class="bouton" style="width: 200px">Rendez-vous</a>
-				<a href="choixTypeCompte.html" class="bouton" style="width: 200px">Votre Compte</a>
+				<a href="patient.php" class="bouton" style="width: 200px">Votre Compte</a>
 			</table>
 	</div>
 

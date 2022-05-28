@@ -1005,10 +1005,40 @@ if ($db_found) {
         <table>
             <br>
             <a href="Accueil.php" class="bouton" style="width: 200px">Accueil</a>
-            <a href="toutparcourir.html" class="bouton" style="width: 200px">Tout Parcourir</a>
-            <a href="recherche.php" class="bouton" style="width: 200px">Recherche</a>
-            <a href="rdv.html" class="bouton" style="width: 200px">Rendez-vous</a>
             <?php 
+                    switch($_SESSION['type']){
+                        case 'patient':
+                            echo '<a href="toutparcourir.html" class="bouton" style="width: 250px">Tout Parcourir</a>';
+                            break;
+                        default :
+                            echo '<a href="" class="bouton" style="width: 250px">Tout Parcourir</a>';
+                            break;
+                    }
+                ?>
+                <?php 
+                    switch($_SESSION['type']){
+                        case 'patient':
+                            echo '<a href="recherche.php" class="bouton" style="width: 250px">Recherche</a>';
+                            break;
+                        default :
+                            echo '<a href="" class="bouton" style="width: 250px">Recherche</a>';
+                            break;
+                    }
+                ?>
+                <?php 
+                    switch($_SESSION['type']){
+                        case 'patient':
+                            echo '<a href="rdv.html" class="bouton" style="width: 250px">Rendez-vous</a>';
+                            break;
+                        case 'medecin':
+                            echo '<a href="rdv.html" class="bouton" style="width: 250px">Rendez-vous</a>';
+                            break;
+                        default :
+                            echo '<a href="" class="bouton" style="width: 250px">Rendez-vous</a>';
+                            break;
+                    }
+                ?>
+                <?php 
                 switch($_SESSION['type']){
                     case "patient":
                         echo "<input type='button' class='bouton' style='width:250px' title='Votre Compte' value='Votre Compte' onclick=\"location.href='patient.php'\">";
@@ -1022,8 +1052,7 @@ if ($db_found) {
                     default:
                         echo '<a href="choixTypeCompte.html" class="bouton" style="width: 250px">Connexion</a>';
                         break;
-                }   
-                
+                    }   
                 ?>
         </table>
     </div>

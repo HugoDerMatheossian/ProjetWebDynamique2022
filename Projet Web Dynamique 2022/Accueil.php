@@ -3,6 +3,7 @@
 	if (empty($_SESSION['type'])) {
 		$_SESSION['type']="invite";
 	}
+	
 ?>
 <!DOCTYPE html>
 <html>
@@ -62,7 +63,7 @@
 			color: white;
 		}
 
- </style>
+ 	</style>
 </head>
 <body>
 	<div id="header"> 
@@ -74,9 +75,39 @@
 			<table>
 				<br>
 				<a href="Accueil.php" class="bouton" style="width: 250px">Accueil</a>
-				<a href="toutparcourir.html" class="bouton" style="width: 250px">Tout Parcourir</a>
-				<a href="recherche.php" class="bouton" style="width: 250px">Recherche</a>
-				<a href="rdv.html" class="bouton" style="width: 250px">Rendez-vous</a>
+				<?php 
+					switch($_SESSION['type']){
+						case 'patient':
+							echo '<a href="toutparcourir.html" class="bouton" style="width: 250px">Tout Parcourir</a>';
+							break;
+						default :
+							echo '<a href="" class="bouton" style="width: 250px">Tout Parcourir</a>';
+							break;
+					}
+				?>
+				<?php 
+					switch($_SESSION['type']){
+						case 'patient':
+							echo '<a href="recherche.php" class="bouton" style="width: 250px">Recherche</a>';
+							break;
+						default :
+							echo '<a href="" class="bouton" style="width: 250px">Recherche</a>';
+							break;
+					}
+				?>
+				<?php 
+					switch($_SESSION['type']){
+						case 'patient':
+							echo '<a href="rdv.html" class="bouton" style="width: 250px">Rendez-vous</a>';
+							break;
+						case 'medecin':
+							echo '<a href="rdv.html" class="bouton" style="width: 250px">Rendez-vous</a>';
+							break;
+						default :
+							echo '<a href="" class="bouton" style="width: 250px">Rendez-vous</a>';
+							break;
+					}
+				?>
 				<?php 
 				switch($_SESSION['type']){
 					case "patient":
@@ -91,8 +122,7 @@
 					default:
 						echo '<a href="choixTypeCompte.html" class="bouton" style="width: 250px">Connexion</a>';
 						break;
-				}	
-				
+					}	
 				?>
 			</table>
 		</hr>

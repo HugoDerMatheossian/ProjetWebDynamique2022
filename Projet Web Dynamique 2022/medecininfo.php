@@ -103,7 +103,7 @@ mysqli_close($db_handle);
     -moz-border-radius: 15px;
     -ms-border-radius: 15px;
     -o-border-radius: 15px;
-    width: 30% ;
+    width: 20% ;
     height: 60%;
     float:left;
 }
@@ -119,8 +119,22 @@ mysqli_close($db_handle);
     -o-border-radius: 15px;
     width:40% ;
     height: 60%;
-    float:right;
 }
+.boite3
+{
+    text-align: center;
+    background-color:lightblue;
+    display: flex;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+    width:30% ;
+    height: 60%;
+    float: right;
+}
+
 .police {
     font-size:x-large;
     font-weight: bold;
@@ -129,14 +143,45 @@ mysqli_close($db_handle);
     margin-right:auto;
 }
 .cercle { 
-	width : 40%;
-	height : 40%;
-   clip-path:ellipse(50% 50%);
-   
-   margin-left:auto;
-   margin-right:auto;
-}
+	display: flex;
+    justify-content: space-around;
+    width:40vw;
+    clip-path:ellipse(35% 35%);
+    text-align: center;
 
+}
+.bouton1 {
+    background-color:cornflowerblue;
+    border: solid;
+    color: black;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    display: inline-block;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+}
+.bouton2 {
+    background-color:cornflowerblue;
+    border: solid;
+    color: black;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    display: inline-block;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+}
 
 
         </style>
@@ -153,7 +198,7 @@ mysqli_close($db_handle);
 				<?php 
                     switch($_SESSION['type']){
                         case 'patient':
-                            echo '<a href="toutparcourir.html" class="bouton" style="width: 250px">Tout Parcourir</a>';
+                            echo '<a href="toutparcourir.html" class="bouton" style="width: 160px">Tout Parcourir</a>';
                             break;
                         default :
                             echo '<a href="" class="bouton" style="width: 160px">Tout Parcourir</a>';
@@ -163,7 +208,7 @@ mysqli_close($db_handle);
                 <?php 
                     switch($_SESSION['type']){
                         case 'patient':
-                            echo '<a href="recherche.php" class="bouton" style="width: 250px">Recherche</a>';
+                            echo '<a href="recherche.php" class="bouton" style="width: 160px">Recherche</a>';
                             break;
                         default :
                             echo '<a href="" class="bouton" style="width: 160px">Recherche</a>';
@@ -173,10 +218,10 @@ mysqli_close($db_handle);
                 <?php 
                     switch($_SESSION['type']){
                         case 'patient':
-                            echo '<a href="rdv.html" class="bouton" style="width: 250px">Rendez-vous</a>';
+                            echo '<a href="rdv.html" class="bouton" style="width: 160px">Rendez-vous</a>';
                             break;
                         case 'medecin':
-                            echo '<a href="rdv.html" class="bouton" style="width: 250px">Rendez-vous</a>';
+                            echo '<a href="rdv.html" class="bouton" style="width: 160px">Rendez-vous</a>';
                             break;
                         default :
                             echo '<a href="" class="bouton" style="width: 160px">Rendez-vous</a>';
@@ -186,13 +231,13 @@ mysqli_close($db_handle);
                 <?php 
                 switch($_SESSION['type']){
                     case "patient":
-                        echo "<input type='button' class='bouton' style='width:250px' title='Votre Compte' value='Votre Compte' onclick=\"location.href='patient.php'\">";
+                        echo "<input type='button' class='bouton' style='width:160px' title='Votre Compte' value='Votre Compte' onclick=\"location.href='patient.php'\">";
                         break;
                     case "medecin":
-                        echo '<a href="Med.php" class="bouton" style="width: 250px">Votre Compte</a>';
+                        echo '<a href="Med.php" class="bouton" style="width: 160px">Votre Compte</a>';
                         break;
                     case "admin":
-                        echo '<a href="" class="bouton" style="width: 250px">Votre Compte</a>';
+                        echo '<a href="" class="bouton" style="width: 160px">Votre Compte</a>';
                         break;
                     default:
                         echo '<a href="choixTypeCompte.html" class="bouton" style="width: 160px">Connexion</a>';
@@ -203,9 +248,6 @@ mysqli_close($db_handle);
 	</div>
 <div id="wrapper">
     <div class="boite1">
-            <div class="police">			<?php 
-                echo "Dr ".$data["Nom"]." ".$data["Prenom"]."<br>";
-                ?></div>
             <div class="cercle">
                 <?php 
                 echo('<img src="' . $data["PDP"] . '">');
@@ -215,27 +257,30 @@ mysqli_close($db_handle);
             <div class="boite2">
                 <div class="police">
                     <?php 
-                        echo ("Médecin :<br>");
-                        echo($data["Specialite"]);
+                    echo "Dr ".$data["Nom"]." ".$data["Prenom"]."<br>";
+                    echo("<br>");
+                        echo "Spécialité :".$data["Specialite"];
                         echo("<br><br>");
-                        echo ("Salle :<br>");
-                        echo($data["Salle"]);
+                        echo "Salle :".$data["Salle"];
                         echo("<br><br>");
-                        echo("Téléphone :<br>");
-                        echo($data["Tel"]);
+                        echo "Téléphone : ".$data["Tel"];
                         echo("<br><br>");
-                        echo("Adresse E-mail :<br>");
-                        echo($data["E-mail"]);
+                        echo "Adresse E-mail : ".$data["E-mail"];
                         echo("<br><br>");
                     ?>
                 </div>
             </div>
-</div>
-        <div>
+            <div class="boite3">
         <?php 
                 echo ' <a href="priserdv.php?id='.$id.'">' ."Prendre un RDV".' </a>';
+                echo '<a href="Accueil.php" class="bouton1" style="width: 250px">Communiquer avec le médecin</a>';
+				echo '<a href="Accueil.php" class="bouton2" style="width: 250px">Voir son CV</a>';
                 ?>
+
+                
         </div>
+</div>
+       
 
         <div id="footer">
 		<footer>

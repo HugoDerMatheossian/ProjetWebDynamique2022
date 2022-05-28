@@ -2,10 +2,10 @@
   $host = 'localhost';
   $dbname = 'omnes_sante';
   $username = 'root';
-  $password = 'root';
+  $password = '';
     
   $dsn = "mysql:host=$host;dbname=$dbname"; 
-  $sql = "SELECT Nom,Prenom,Specialite FROM medecin where Specialite LIKE 'Généraliste'";
+  $sql = "SELECT Nom,Prenom,Specialite FROM medecin where Specialite LIKE 'Generaliste'";
    
   try{
    $pdo = new PDO($dsn, $username, $password);

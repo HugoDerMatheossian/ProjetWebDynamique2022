@@ -2,7 +2,7 @@
   $host = 'localhost';
   $dbname = 'omnes_sante';
   $username = 'root';
-  $password = 'root';
+  $password = '';
     
   $dsn = "mysql:host=$host;dbname=$dbname"; 
   $sql = "SELECT Nom,Prenom,Specialite FROM medecin where Specialite LIKE 'Dermatologue'";
@@ -83,7 +83,7 @@
       <tbody>
         <?php while($row = $stmt->fetch(PDO::FETCH_ASSOC)) : ?>
         <tr>
-           <td><a href="PageAffichage.html"><?php echo htmlspecialchars($row['Nom']);?></a></td>
+           <td><a href="medecininfo.php"><?php echo htmlspecialchars($row['Nom']);?></a></td>
           <td><?php echo htmlspecialchars($row['Prenom']); ?></td>
         </tr>
          <?php endwhile; ?>

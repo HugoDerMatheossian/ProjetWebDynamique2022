@@ -1,4 +1,6 @@
-<?php  
+<?php
+
+session_start();  
 $database="omnes_sante";
 
 // on se connecte ensuite
@@ -147,11 +149,27 @@ mysqli_close($db_handle);
 	<div id="nav">
 			<table>
 				<br>
-				<a href="Accueil.html" class="bouton" style="width: 200px">Accueil</a>
+				<a href="Accueil.php" class="bouton" style="width: 200px">Accueil</a>
 				<a href="toutparcourir.html" class="bouton" style="width: 200px">Tout Parcourir</a>
 				<a href="recherche.php" class="bouton" style="width: 200px">Recherche</a>
 				<a href="rdv.html" class="bouton" style="width: 200px">Rendez-vous</a>
-				<a href="choixTypeCompte.html" class="bouton" style="width: 200px">Votre Compte</a>
+				<?php 
+                switch($_SESSION['type']){
+                    case "patient":
+                        echo "<input type='button' class='bouton' style='width:250px' title='Votre Compte' value='Votre Compte' onclick=\"location.href='patient.php'\">";
+                        break;
+                    case "medecin":
+                        echo '<a href="Med.php" class="bouton" style="width: 250px">Votre Compte</a>';
+                        break;
+                    case "admin":
+                        echo '<a href="" class="bouton" style="width: 250px">Votre Compte</a>';
+                        break;
+                    default:
+                        echo '<a href="choixTypeCompte.html" class="bouton" style="width: 250px">Connexion</a>';
+                        break;
+                }   
+                
+                ?>
 			</table>
 	</div>
 <div id="wrapper">

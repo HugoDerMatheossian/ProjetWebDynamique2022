@@ -76,11 +76,11 @@
 
 				//Lien vers la page suivante
 				//ici on met accueil, mais on changera pour des pages méta
-				echo '<meta http-equiv="refresh" content="5;URL=Accueil.html">';
+				echo '<meta http-equiv="refresh" content="5;URL=patient.php">';
 				echo "<br>";
 				echo '<img src="happy.png" width="400px">';
-				echo "<br>";
-				echo "Redirection vers l'accueil' dans 5 secondes..";
+			echo "<br>";
+				echo "Redirection vers votre page dans 5 secondes..";
 			} 
 			else 
 			{

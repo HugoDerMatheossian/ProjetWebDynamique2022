@@ -20,10 +20,66 @@ $tab = $res->fetchAll();
 <title> Barre de recherche</title>
 <meta charest="utf-8"/>
 <link rel="stylesheet" href="css/barrederecherche.css?t=<?php echo time()?>"/>
+<style type="text/css">
+
+        #header {
+            background-color: white;
+            color: blue;
+            text-align: center;
+            padding: 0px;
+        }
+
+        #nav {
+            background-color: white;
+            color: black;
+            text-align: center;
+            padding: 0px;
+        }
+
+        #section {
+            
+            background-color: white;
+            color: black;
+            clear: both;
+            text-align: center;
+            font-weight: bold;
+            padding: 0px;
+        }
+
+        #footer {
+            position: absolute;
+            width: 100%;
+            background-color: white;
+            color: black;
+            clear: both;
+            text-align: center;
+            padding: 0px;
+            bottom: 0px;
+        }
+
+        .bouton{
+            background-color:#00BFFF;
+            border: solid;
+            color: black;
+            padding: 10px;
+            margin: 10px;
+            text-align: center;
+            display: inline-block;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        .bouton:hover {
+            background-color: #4169E1;
+            color: white;
+        }
+
+    </style>
 <meta name="viewport" content="width=device-width"/>
     </head>
     <body>
-
+    <div id="header"> 
+        <h1>Omnes Santé<img src="logo.png" height="70px" ></h1>
+    </div>
     <div id="nav">
 		<hr>
 			<table>
@@ -32,7 +88,7 @@ $tab = $res->fetchAll();
 				<a href="toutparcourir.html" class="bouton" style="width: 250px">Tout Parcourir</a>
 				<a href="recherche.php" class="bouton" style="width: 250px">Recherche</a>
 				<a href="rdv.html" class="bouton" style="width: 250px">Rendez-vous</a>
-				<a href="choixTypeCompte.html" class="bouton" style="width: 250px">Votre Compte</a>
+				<a href="patient.php" class="bouton" style="width: 250px">Votre Compte</a>
 			</table>
 		</hr>
 	</div>
@@ -54,7 +110,7 @@ $tab = $res->fetchAll();
 
                 <?php } ?>
             </ol>
-        </div>
+        </div><?php } ?>
         <div id="footer">
 		<footer>
 		<small>
@@ -64,8 +120,5 @@ $tab = $res->fetchAll();
 		</small>
 	</footer>
 	</div>	
-
-        <?php } ?>
-
     </body>
 </html>

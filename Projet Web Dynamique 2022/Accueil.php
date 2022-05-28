@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	if (empty($_SESSION)) {
+	if (empty($_SESSION['type'])) {
 		$_SESSION['type']="invite";
 	}
 ?>

@@ -12,12 +12,9 @@
 		$salle=isset($_POST["Salle"])? $_POST["Salle"] : "";
 		$tel=isset($_POST["Tel"])? $_POST["Tel"] : "";
 		$mail=isset($_POST["Mail"])? $_POST["Mail"] : "";
-		/*if (isset($_FILES['photo'])) {
-			$photo = $_FILES['photo']['name'];//pb
-		}*/
 		///////////on teste toute les entrées possibles////////////////
 		if(!empty($_POST['specialite']) && ($_POST['specialite'] == 'generaliste')){
-				$specialite="Généraliste";
+				$specialite="Generaliste";
 			}
 		if(!empty($_POST['specialite']) && ($_POST['specialite'] == 'addictologue')){
 				$specialite="Addictologue";
@@ -35,13 +32,13 @@
 				$specialite="GHE";
 			}
 		if(!empty($_POST['specialite']) && ($_POST['specialite'] == 'gynecologue')){
-				$specialite="Gynécologue";
+				$specialite="Gynecologue";
 			}
 		if(!empty($_POST['specialite']) && ($_POST['specialite'] == 'ist')){
 				$specialite="IST";
 			}
 		if(!empty($_POST['specialite']) && ($_POST['specialite'] == 'osteopathe')){
-				$specialite="Ostéopathe";
+				$specialite="Osteopathe";
 			}
 		///////////////////////////////////////////////////////////////
 		if ($db_found) {

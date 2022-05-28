@@ -72,6 +72,56 @@ $tab = $res->fetchAll();
             background-color: #4169E1;
             color: white;
         }
+        form{
+            padding: 60px;
+            background-color: #4169E1;
+        }
+
+        input[type="text"]{
+            width: 200px;
+            padding: 10px;
+            font-size:16pt;
+            border:none;
+            outline:none;
+            cursor:none;
+            cursor:pointer;
+        }
+
+        input[type="submit"]{
+            width: 200px;
+            padding: 10px;
+            font-size:16pt;
+            border:none;
+            outline:none;
+            cursor:none;
+            cursor:pointer;
+            background-color: blue;   
+        }
+        input[type="submit"]:hover{
+            background-color:darkslategrey;
+        }
+        #resultats{
+            width: 620 px;
+            font-size: 14pt;
+            margin: 20px auto;
+            color:#00BFFF;
+            text-align:left;
+        }
+        #resultats ol{
+            padding-left: 16px;
+            list-style-position: outside;
+        }
+        #resultats li{
+            margin: 14px 0;
+            text-align: justify;
+        }
+        #nbr{
+            color:blue;
+            font-family: oswald;
+            font: size 16pt;
+            border-bottom: solid 1px #888;
+            padding:10px 0;
+        }
 
     </style>
 <meta name="viewport" content="width=device-width"/>

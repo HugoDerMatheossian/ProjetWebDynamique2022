@@ -127,10 +127,10 @@ mysqli_close($db_handle);
     margin-right:auto;
 }
 .cercle { 
-	width : 20%;
+	width : 40%;
 	height : 40%;
    clip-path:ellipse(50% 50%);
-   text-align: center;
+   
    margin-left:auto;
    margin-right:auto;
 }

@@ -103,10 +103,12 @@ mysqli_close($db_handle);
     -moz-border-radius: 15px;
     -ms-border-radius: 15px;
     -o-border-radius: 15px;
-    width: 20% ;
+    width: 30%;
+    margin-right: 5%;
     height: 60%;
     float:left;
 }
+
 .boite2
 {
     text-align: center;
@@ -117,7 +119,9 @@ mysqli_close($db_handle);
     -moz-border-radius: 15px;
     -ms-border-radius: 15px;
     -o-border-radius: 15px;
-    width:40% ;
+    float: left;
+    width: 30%;
+    margin-right: 5%;
     height: 60%;
 }
 .boite3
@@ -130,9 +134,9 @@ mysqli_close($db_handle);
     -moz-border-radius: 15px;
     -ms-border-radius: 15px;
     -o-border-radius: 15px;
-    width:30% ;
+    float: left;
+    width: 30%;
     height: 60%;
-    float: right;
 }
 
 .police {
@@ -165,6 +169,7 @@ mysqli_close($db_handle);
     -moz-border-radius: 15px;
     -ms-border-radius: 15px;
     -o-border-radius: 15px;
+    height:25px;
 }
 .bouton2 {
     background-color:cornflowerblue;
@@ -181,6 +186,7 @@ mysqli_close($db_handle);
     -moz-border-radius: 15px;
     -ms-border-radius: 15px;
     -o-border-radius: 15px;
+    height:25px;
 }
 
 
@@ -271,17 +277,15 @@ mysqli_close($db_handle);
                 </div>
             </div>
             <div class="boite3">
-        <?php 
-                echo ' <a href="priserdv.php?id='.$id.'">' ."Prendre un RDV".' </a>';
+                <p>
+                <?php 
+                echo ' <a href="priserdv.php?id='.$id.'"class="bouton1" style="width: 250px">' ."Prendre un RDV".' </a>';
                 echo '<a href="Accueil.php" class="bouton1" style="width: 250px">Communiquer avec le médecin</a>';
 				echo '<a href="Accueil.php" class="bouton2" style="width: 250px">Voir son CV</a>';
                 ?>
-
-                
+                </p>
         </div>
 </div>
-       
-
         <div id="footer">
 		<footer>
 		<small>

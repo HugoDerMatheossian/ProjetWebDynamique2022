@@ -1,11 +1,12 @@
 <?php  
+
+session_start();
 $database="omnes_sante";
 
 // on se connecte ensuite
 $db_handle=mysqli_connect("localhost","root","");
 $db_found = mysqli_select_db($db_handle,$database);
 
-session_start();
 if ($db_found){
 
     echo $_GET['id']; 
@@ -15,8 +16,20 @@ if ($db_found){
   $id=$_GET['id'];
   $jour=$_GET['jour']; 
   $heure=$_GET['heure'];
+  $login=$_SESSION['login'];
+  $email=$_SESSION['email'];
 
-  $sql = "INSERT INTO rdv_medecin(ID_Patient,ID_Medecin,Jour,Heure) VALUES ('1','" . $id ."','" . $jour ."','" .$heure . "');";
+  $sql = "SELECT * FROM `patient`";
+  $result = mysqli_query($db_handle, $sql);
+  while($data = mysqli_fetch_assoc($result)){
+    if($_SESSION['login']==$data['Nom']){
+        if($_SESSION['email']==$data['E-mail']){
+            $_SESSION['ID_Patient']=$data['ID_Patient'];
+        }
+    }
+  }
+
+  $sql = "INSERT INTO rdv_medecin(ID_Patient,ID_Medecin,Jour,Heure) VALUES ('".$_SESSION['ID_Patient']."','".$id."','".$jour."','".$heure."');";
     $res = mysqli_query($db_handle,$sql);
 }
 

@@ -99,6 +99,7 @@ while($data = mysqli_fetch_assoc($result)){
       <table>
         <br>
         <a href="Accueil.php" class="bouton" style="width: 250px">Accueil</a>
+        <a href="manipulationBancaire.php" class="bouton" style="width: 250px">Vos infos bancaires</a>
         <a href="deconnexion.php" class="bouton" style="width: 250px">Deconnexion</a>
       </table>
     </hr>

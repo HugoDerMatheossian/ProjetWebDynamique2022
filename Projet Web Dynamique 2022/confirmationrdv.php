@@ -16,6 +16,7 @@ if ($db_found){
   $login=$_SESSION['login'];
   $email=$_SESSION['email'];
 
+ 
   $sql = "SELECT * FROM `patient`";
   $result = mysqli_query($db_handle, $sql);
   while($data = mysqli_fetch_assoc($result)){
@@ -27,7 +28,12 @@ if ($db_found){
   }
 
   $sql = "INSERT INTO rdv_medecin(ID_Patient,ID_Medecin,Jour,Heure) VALUES ('".$_SESSION['ID_Patient']."','".$id."','".$jour."','".$heure."');";
+  
     $res = mysqli_query($db_handle,$sql);
+
+    $sql="SELECT * FROM medecin WHERE ID_Medecin= $id ";
+    $res = mysqli_query($db_handle,$sql);
+    $data = mysqli_fetch_assoc($res);
 }
 
 // si existe pas 
@@ -91,49 +97,36 @@ mysqli_close($db_handle);
     background-color: #4169E1;
     color: white;
 }
-.boite1
-{
-    text-align: center;
-    background-color:lightblue;
-    display: flex;
-    border-radius: 15px;
-    -webkit-border-radius: 15px;
-    -moz-border-radius: 15px;
-    -ms-border-radius: 15px;
-    -o-border-radius: 15px;
-    width: 30% ;
-    height: 60%;
-    float:left;
-}
-.boite2
-{
-    text-align: center;
-    background-color:lightblue;
-    display: flex;
-    border-radius: 15px;
-    -webkit-border-radius: 15px;
-    -moz-border-radius: 15px;
-    -ms-border-radius: 15px;
-    -o-border-radius: 15px;
-    width:40% ;
-    height: 60%;
-   float:right;
-}
-.police {
-font-size:x-large;
-font-weight: bold;
-
-}
-.cercle { 
-	width : 20%;
-	height : 40%;
-   clip-path:ellipse(50% 50%);
-   text-align: center;
-   float: left;
-	
-}
 
 
+#boite {
+            text-align: center;
+            background-color: lightblue;
+            display: flex;
+            border-radius: 15px;
+            -webkit-border-radius: 15px;
+            -moz-border-radius: 15px;
+            -ms-border-radius: 15px;
+            -o-border-radius: 15px;
+            width: 60%;
+            height: 60%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #boite1 {
+            text-align: center;
+            background-color:#4169E1;
+            display: flex;
+            border-radius: 15px;
+            -webkit-border-radius: 15px;
+            -moz-border-radius: 15px;
+            -ms-border-radius: 15px;
+            -o-border-radius: 15px;
+            width: 60%;
+            height: 60%;
+           margin: auto;
+        }
 
         </style>
     </head>
@@ -143,22 +136,27 @@ font-weight: bold;
 	</div>
 
 	<div id="nav">
+        <hr>
 			<table>
-				<br>
 				<a href="Accueil.php" class="bouton" style="width: 200px">Accueil</a>
 				<a href="toutparcourir.html" class="bouton" style="width: 200px">Tout Parcourir</a>
 				<a href="recherche.php" class="bouton" style="width: 200px">Recherche</a>
 				<a href="rdv.html" class="bouton" style="width: 200px">Rendez-vous</a>
 				<a href="patient.php" class="bouton" style="width: 200px">Votre Compte</a>
 			</table>
+</hr>
 	</div>
+<hr>
+<div id="boite">
+   <div id="boite1">
+    <?php   echo "Félicitation vous avez pris un rdv avec le docteur  ". $data["Nom"]; 
+    /*echo $_GET['jour']; 
+    echo $_GET['heure']; */
 
-<div>
-    <?php  echo $_GET['id']; 
-    echo $_GET['jour']; 
-    echo $_GET['heure']; 
     ?>
+    </div>
 </div>
+    </hr>
 
         <div id="footer">
 		<footer>

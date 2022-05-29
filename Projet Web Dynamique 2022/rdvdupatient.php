@@ -1,7 +1,7 @@
 <?php
 session_start();
 // On teste si la variable de session existe et contient une valeur
-
+//ok
 
 //On identifie la base de donnees 
 $database = "omnes_sante";

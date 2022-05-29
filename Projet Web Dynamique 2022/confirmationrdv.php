@@ -26,10 +26,23 @@ if ($db_found){
         }
     }
   }
+  /*if(isset($_POST["submit"])){
+    $type_carte=isset($_POST["type_carte"])? $_POST["type_carte"] : "";
+    $num_carte=isset($_POST["num_carte"])? $_POST["num_carte"] : "";
+    $nom_carte=isset($_POST["nom_carte"])? $_POST["nom_carte"] : "";
+    $date_carte=isset($_POST["date_carte"])? $_POST["date_carte"] : "";
+    $code_secret=isset($_POST["code_secret"])? $_POST["code_secret"] : "";
 
-  $sql = "INSERT INTO rdv_medecin(ID_Patient,ID_Medecin,Jour,Heure) VALUES ('".$_SESSION['ID_Patient']."','".$id."','".$jour."','".$heure."');";
-  
-    $res = mysqli_query($db_handle,$sql);
+    //on verifie que les champs des infos bancaires correspondent à ceux de la bdd
+    if(($type_carte==data['type_carte'])&&($num_carte==data['num_carte'])&&($nom_carte==data['nom_carte'])&&($date_carte==data['date_carte'])&&($code_secret==data['code_secret'])){
+        $sql = "INSERT INTO rdv_medecin(ID_Patient,ID_Medecin,Jour,Heure) VALUES ('".$_SESSION['ID_Patient']."','".$id."','".$jour."','".$heure."');";
+        $res = mysqli_query($db_handle,$sql);
+    }
+    else{
+        echo "Erreur de paiement!";;
+    }
+
+  } */
 
     $sql="SELECT * FROM medecin WHERE ID_Medecin= $id ";
     $res = mysqli_query($db_handle,$sql);
@@ -149,10 +162,19 @@ mysqli_close($db_handle);
 <hr>
 <div id="boite">
    <div id="boite1">
-    <?php   echo "Félicitation vous avez pris un rdv avec le docteur  ". $data["Nom"]; 
+        <h1>Valider vos informations Bancaires:</h1>
+        <form action="confirmationrdv2.php" method="post" ><br>
+            <input type="input" name="type_carte" id="type_carte" placeholder="Type de votre Carte"></input>
+            <input type="input" name="num_carte" id="num_carte"placeholder="N°de votre Carte "></input><br>
+            <input type="input" name="nom_carte" id="nom_carte" placeholder="Nom sur votre Carte"></input>
+            <input type="input" name="date_carte" id="date_carte" placeholder="Date d'expiration"></input><br>
+            <input type="password" name="code_secret"id="code_secret" placeholder="Votre Code"></input><br>
+            <input type="submit" name="submit"></input>
+        </form>
+    <?php
+    /*echo "Félicitation vous avez pris un rdv avec le docteur  ". $data["Nom"];*/ 
     /*echo $_GET['jour']; 
     echo $_GET['heure']; */
-
     ?>
     </div>
 </div>

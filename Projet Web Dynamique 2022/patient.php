@@ -4,7 +4,7 @@ session_start();
 if(empty($_SESSION['type'])||($_SESSION['type'])!="patient") 
 {
   // Si inexistante ou nulle, ->connexion
-  echo '<meta http-equiv="refresh" content="0;URL=PageLoginMedecin.html">';
+  echo '<meta http-equiv="refresh" content="0;URL=PageLoginPatient.html">';
   exit();
 }
 
@@ -112,6 +112,7 @@ while($data = mysqli_fetch_assoc($result)){
       <p>Nom: <?php echo $_SESSION['login'];?><br></p>
       <p>Prénom: <?php echo $_SESSION['prenom'];?><br></p>
       <p>E-mail : <?php echo $_SESSION['email'];?><br></p>
+      <?php  echo $_SESSION['Id_patient']?>
 
     </div>
   </div>

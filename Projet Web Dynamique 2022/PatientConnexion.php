@@ -3,6 +3,7 @@
 	//On identifie la base de donnees 
 	$database = "omnes_sante";
 	$type="patient";
+
 	//On s'y connecte
 	$db_handle = mysqli_connect('localhost', 'root', '');
 	$db_found = mysqli_select_db($db_handle, $database);
@@ -62,11 +63,25 @@
 			{
 				echo "Connexion reussi !";
 				//On demarre une session
+				
 				session_start();
 
 				$_SESSION['login'] = $_POST['nom'];
 				$_SESSION['email'] = $_POST['email'];
 				$_SESSION['type'] = $type;
+
+				$sql = "SELECT * FROM `patient`";
+				$result = mysqli_query($db_handle, $sql);
+				while ($data = mysqli_fetch_assoc($result)) {
+					if($data['Nom']==$_SESSION['login']){
+						if($data['E-mail']==$_SESSION['email']){
+							echo "string";
+							$_SESSION['Id_patient']= $data['ID_Patient'];
+						}
+					}
+				}
+				
+
 				//requete sql de l'annee derniere...peut être utile peut être
 				/*$sql = "SELECT Numerodetelephone FROM `acheteurs` WHERE Pseudo LIKE '%$login' AND MDP LIKE '%$pass'";
 				$result = mysqli_query($db_handle, $sql);

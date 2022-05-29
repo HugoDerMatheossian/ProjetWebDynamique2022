@@ -128,7 +128,7 @@ mysqli_close($db_handle);
 			d’une biopsie ou d’une pièce opératoire, ou, dans le 
 			cas des hémopathies malignes, sur des analyses biologiques
 			</p>
-			<a href="" class="button" type="button">Prendre RDV</a>
+			
 			<?php 
                 echo ' <a href="priserdvlabo.php?id='.$id.'"class="button" type="button">' ."Prendre RDV".' </a>';
                 ?>

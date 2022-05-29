@@ -96,7 +96,7 @@ height:50px;
 				<a href="Accueil.php" class="bouton" style="width: 160px">Accueil</a>
 				<a href="rdvdumedecin.php" class="bouton" style="width: 160px">Accéder à l'emploi du temps</a>
 				<a href="modifPhoto.php" class="bouton" style="width: 160px">Modifier Photo</a>
-				<a href="modifCV.php" class="bouton" style="width: 160px">Modifier votre CV</a>
+				<a href="" class="bouton" style="width: 160px">Modifier votre CV</a>
 				<a href="deconnexion.php" class="bouton" style="width: 160px">Deconnexion</a>
 			</table>
 		</hr>

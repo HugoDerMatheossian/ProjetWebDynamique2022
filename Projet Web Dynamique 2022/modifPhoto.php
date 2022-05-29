@@ -92,7 +92,7 @@ $db_found = mysqli_select_db($db_handle, $database);
 				<a href="Accueil.php" class="bouton" style="width: 250px">Accueil</a>
 				<a href="" class="bouton" style="width: 250px">Accéder à l'emploi du temps</a>
 				<a href="modifPhoto.php" class="bouton" style="width: 250px">Modifier Photo</a>
-				<a href="modifCV.php" class="bouton" style="width: 250px">Modifier votre CV</a>
+				<a href="" class="bouton" style="width: 250px">Modifier votre CV</a>
 				<a href="deconnexion.php" class="bouton" style="width: 250px">Deconnexion</a>
 			</table>
 		</hr>

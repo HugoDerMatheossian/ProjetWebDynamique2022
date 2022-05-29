@@ -164,7 +164,7 @@ height:50px;
 				<a href="Accueil.php" class="bouton" style="width: 160px">Accueil</a>
 				<a href="toutparcourir.html" class="bouton" style="width: 160px">Tout Parcourir</a>
 				<a href="recherche.php" class="bouton" style="width: 160px">Recherche</a>
-				<a href="rdv.html" class="bouton" style="width: 160px">Rendez-vous</a>
+				<a href="rdvdupatient.php" class="bouton" style="width: 160px">Rendez-vous</a>
 				<a href="patient.php" class="bouton" style="width: 160px">Votre Compte</a>
 			</table>
 		</hr>

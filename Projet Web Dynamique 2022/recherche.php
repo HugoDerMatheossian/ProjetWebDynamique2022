@@ -59,43 +59,51 @@ $tab = $res->fetchAll();
 
         .bouton{
             background-color:#00BFFF;
-            border: solid;
-            color: black;
-            padding: 10px;
-            margin: 10px;
-            text-align: center;
-            display: inline-block;
-            font-size: 20px;
-            cursor: pointer;
+    border: solid;
+    color: black;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    display: inline-block;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
         }
         .bouton:hover {
             background-color: #4169E1;
             color: white;
         }
         form{
-            padding: 60px;
-            background-color: #4169E1;
+            padding: 10px;
+            background-color:aliceblue;
+            
         }
 
         input[type="text"]{
             width: 200px;
-            padding: 10px;
+            padding: 5px;
             font-size:16pt;
             border:none;
             outline:none;
             cursor:none;
             cursor:pointer;
+            
         }
 
         input[type="submit"]{
             width: 200px;
-            padding: 10px;
+            padding: 5px;
             font-size:16pt;
             border:none;
             outline:none;
             cursor:none;
             cursor:pointer;
-            background-color: blue;   
+            background-color: blue;  
+           
         }
         input[type="submit"]:hover{
             background-color:darkslategrey;
@@ -104,23 +112,44 @@ $tab = $res->fetchAll();
             width: 620 px;
             font-size: 14pt;
             margin: 20px auto;
-            color:#00BFFF;
+            color:#4169E1;
             text-align:left;
         }
         #resultats ol{
-            padding-left: 16px;
+           
             list-style-position: outside;
         }
         #resultats li{
-            margin: 14px 0;
+            margin: 4px 0;
             text-align: justify;
         }
         #nbr{
-            color:blue;
+            color:black;
             font-family: oswald;
             font: size 16pt;
             border-bottom: solid 1px #888;
-            padding:10px 0;
+            padding:4px 0;
+        }
+       
+        .bouton1{
+            background-color:lightskyblue;
+    border: solid;
+    color: black;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    display: inline-block;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+        }
+        .bouton1:hover {
+            background-color: #4169E1;
+            color: white;
         }
 
     </style>
@@ -128,25 +157,27 @@ $tab = $res->fetchAll();
     </head>
     <body>
     <div id="header"> 
-        <h1>Omnes Santé<img src="logo.png" height="70px" ></h1>
+        <h1>Omnes Santé<img src="logo.png" height="40px" ></h1>
     </div>
     <div id="nav">
 		<hr>
 			<table>
-				<br>
-				<a href="Accueil.php" class="bouton" style="width: 250px">Accueil</a>
-				<a href="toutparcourir.html" class="bouton" style="width: 250px">Tout Parcourir</a>
-				<a href="recherche.php" class="bouton" style="width: 250px">Recherche</a>
-				<a href="rdv.html" class="bouton" style="width: 250px">Rendez-vous</a>
-				<a href="patient.php" class="bouton" style="width: 250px">Votre Compte</a>
+				<a href="Accueil.php" class="bouton" style="width: 160px">Accueil</a>
+				<a href="toutparcourir.html" class="bouton" style="width: 160px">Tout Parcourir</a>
+				<a href="recherche.php" class="bouton" style="width: 160px">Recherche</a>
+				<a href="rdv.html" class="bouton" style="width: 160px">Rendez-vous</a>
+				<a href="patient.php" class="bouton" style="width: 160px">Votre Compte</a>
 			</table>
 		</hr>
 	</div>
+    <hr>
         <form name ="fo" method="get" action="">
+           
             <input type="text" name="keywords" value="<?php echo $keywords?>" placeholder="Mots-clés" />
             <input type="submit" name="valider" placeholder="Rechercher" />
-            
+    
         </form>
+        </hr> 
         <?php if (@$afficher=="oui") { ?>
         <div id="resultats">
             <div id="nbr"><?=count($tab)." ".(count($tab)>1?"résultats trouvés":"résultat trouvé") ?></div>
@@ -155,7 +186,8 @@ $tab = $res->fetchAll();
 
                 <li><?php 
                 $id= $tab[$i]['ID_Medecin']; 
-                echo '<h1>Dr <a href="medecininfo.php?id='.$id.'">' .$tab[$i]["Nom"].' '.$tab[$i]["Prenom"].' </h1></a>';
+               // echo '<h1>Dr <a href="medecininfo.php?id='.$id.'">' .$tab[$i]["Nom"].' '.$tab[$i]["Prenom"].' </h1></a>';
+                echo ' <a href="medecininfo.php?id='.$id.'"class="bouton1" style="width: 250px">' .$tab[$i]["Nom"].' '.$tab[$i]["Prenom"].' </a>';
                 ?></li>
 
                 <?php } ?>

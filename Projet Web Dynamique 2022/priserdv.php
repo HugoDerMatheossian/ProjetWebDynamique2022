@@ -55,7 +55,7 @@ text-align: center;
 width:100%;
 
 padding-top:50px;
-position: fixed;
+
 height:50px;
         }
 
@@ -79,6 +79,9 @@ height:50px;
         .bouton:hover {
             background-color: #4169E1;
             color: white;
+        }
+        h1{
+            text-align: center;
         }
 
         #boite {
@@ -998,9 +1001,9 @@ if ($db_found) {
     </div>
 
     <div id="nav">
+        <hr>
         <table>
-            <br>
-            <a href="Accueil.php" class="bouton" style="width: 200px">Accueil</a>
+            <a href="Accueil.php" class="bouton" style="width: 160px">Accueil</a>
             <?php 
                     switch($_SESSION['type']){
                         case 'patient':
@@ -1051,11 +1054,15 @@ if ($db_found) {
                     }   
                 ?>
         </table>
+                </hr>
     </div>
-
+<hr>
+<h1>Disponibilité du médecin</h1>
     <div class="Boite" id="boite">
         <div id="emploi">
+           
             <table id="table">
+
                 <tr>
 
                     <td>Lundi</td>
@@ -1181,7 +1188,9 @@ if ($db_found) {
 
             </table>
         </div>
+    
     </div>
+                </hr>
 
     <div id="footer">
         <footer>

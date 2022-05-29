@@ -47,8 +47,7 @@ $tab = $res->fetchAll();
         }
 
         #footer {
-            position: fixed;
-bottom:0;
+            bottom:0;
 text-align: center;
 width:100%;
 

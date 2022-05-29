@@ -9,16 +9,7 @@ $db_found = mysqli_select_db($db_handle,$database);
 
 // on fait un traitement de la base de donnée si elle existe
 if ($db_found){
-  /*  $sql = "SELECT * FROM membre";
-    $result = mysqli_query($db_handle,$sql);
-    while ($data = mysli_fetch_assoc($result))
-    {
-        echo "ID :". $data['ID'].'<br>';
-        echo "Nom :". $data['Nom'].'<br>';
-        echo "Prénom :". $data['Prenom'].'<br>';
-        echo "Statut :". $data['Statut'].'<br>';
-        echo "Date de naissance :". $data['Date de naissance'].'<br>';
-    } */
+  
     $id=$_GET['id']; 
     $sql ="SELECT * FROM medecin  WHERE ID_Medecin=$id ";
     $res = mysqli_query($db_handle,$sql);

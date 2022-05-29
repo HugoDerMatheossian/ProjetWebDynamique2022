@@ -101,7 +101,7 @@
 							echo '<a href="rdv.html" class="bouton" style="width: 250px">Rendez-vous</a>';
 							break;
 						case 'medecin':
-							echo '<a href="rdv.html" class="bouton" style="width: 250px">Rendez-vous</a>';
+							echo '<a href="rdvdumedecin.php" class="bouton" style="width: 250px">Rendez-vous</a>';
 							break;
 						default :
 							echo '<a href="" class="bouton" style="width: 250px">Rendez-vous</a>';

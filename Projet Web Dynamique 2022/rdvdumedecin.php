@@ -49,11 +49,10 @@ $db_found = mysqli_select_db($db_handle, $database);
 		}
 
 		#footer {
-			position: fixed;
-bottom:0;
+			bottom:0;
 text-align: center;
 width:100%;
-
+position: fixed;
 padding-top:50px;
 
 height:50px;
@@ -145,7 +144,7 @@ height:50px;
     -ms-border-radius: 15px;
     -o-border-radius: 15px;
     width: 25%;
-    margin-top: 10%;
+    margin-top: 5%;
     margin-left: 5%;
     height: 40%;
     float:left;
@@ -161,7 +160,7 @@ height:50px;
     -o-border-radius: 15px;
     width: 25%;
     margin-left: 5%;
-    margin-top: 10%;
+    margin-top: 5%;
     height: 40%;
     float:left;
 }
@@ -175,7 +174,7 @@ height:50px;
     -ms-border-radius: 15px;
     -o-border-radius: 15px;
     width: 25%;
-    margin-top: 10%;
+    margin-top: 5%;
     margin-left: 5%;
     height: 40%;
     float:left;
@@ -190,11 +189,27 @@ height:50px;
     -ms-border-radius: 15px;
     -o-border-radius: 15px;
     width: 30%;
-    margin-top: 10%;
+    margin-top: 5%;
     margin-left: 32%;
     height: 40%;
     float:left;
 }
+.retour{
+			background-color:#FF337A;
+			border: solid;
+			color: navajowhite;
+			padding: 2px;
+			margin: 2px;
+			text-align: center;
+			display: inline-block;
+			font-size: 18px;
+			cursor: pointer;
+			position:relative; 
+    			display:inline-block; 
+			float: right;
+			width: 70px;
+			height: 20px;
+		}
 #h1 {
     text-align: center;
         }
@@ -218,10 +233,11 @@ height:50px;
 		<div class="boite1">
             <h1 >Lundi :</h1>
             <div class="boite">
-                <table>
+            <table>
                 <tr>
-                    <td>Nom du Patient</td>
+                    
                     <td> Horaire</td>
+                    <td>Nom du Patient</td>
                 </tr>
                 <tr>
                 <?php 
@@ -231,24 +247,30 @@ height:50px;
                 while($data = mysqli_fetch_assoc($res)){
                 ?>
                 <td><?php
-                    echo $data["ID_Patient"];?></td>
-                    <td><?php
-                    $data["Heure"];?></td>
+                   echo $data["Heure"];?></td>
+                <td><?php
+                     $id1=$data["ID_Patient"];
+                    $sql="SELECT * FROM patient WHERE ID_Patient= $id1 ";
+                    $res = mysqli_query($db_handle,$sql);
+                    $data = mysqli_fetch_assoc($res);
+                       echo $data["Nom"];?></td>
+                    
                     <?php
                   }
                 ?>
                 </tr>
-                </table>
+            </table> 
                 
             </div>
         </div>
         <div class="boite2">
         <h1>Mardi :</h1>
         <div class="boite">
-            <table>
+        <table>
                 <tr>
-                    <td>Nom du Patient</td>
+                    
                     <td> Horaire</td>
+                    <td>Nom du Patient</td>
                 </tr>
                 <tr>
                 <?php 
@@ -258,23 +280,29 @@ height:50px;
                 while($data = mysqli_fetch_assoc($res)){
                 ?>
                 <td><?php
-                    echo $data["ID_Patient"];?></td>
-                    <td><?php
-                    $data["Heure"];?></td>
+                   echo $data["Heure"];?></td>
+                <td><?php
+                     $id1=$data["ID_Patient"];
+                    $sql="SELECT * FROM patient WHERE ID_Patient= $id1 ";
+                    $res = mysqli_query($db_handle,$sql);
+                    $data = mysqli_fetch_assoc($res);
+                       echo $data["Nom"];?></td>
+                    
                     <?php
                   }
                 ?>
                 </tr>
-                </table>   
+            </table>   
             </div>
         </div>
         <div class="boite3">
             <h1>Mercredi :</h1>
             <div class="boite">
-                <table>
+            <table>
                 <tr>
-                    <td>Nom du Patient</td>
+                    
                     <td> Horaire</td>
+                    <td>Nom du Patient</td>
                 </tr>
                 <tr>
                 <?php 
@@ -284,14 +312,19 @@ height:50px;
                 while($data = mysqli_fetch_assoc($res)){
                 ?>
                 <td><?php
-                    echo $data["ID_Patient"];?></td>
-                    <td><?php
-                    $data["Heure"];?></td>
+                 echo  $data["Heure"];?></td>
+                <td><?php
+                     $id1=$data["ID_Patient"];
+                    $sql="SELECT * FROM patient WHERE ID_Patient= $id1 ";
+                    $res = mysqli_query($db_handle,$sql);
+                    $data = mysqli_fetch_assoc($res);
+                       echo $data["Nom"];?></td>
+                    
                     <?php
                   }
                 ?>
                 </tr>
-                </table>
+            </table> 
             </div>
         </div>
         <div class="boite4" >
@@ -299,8 +332,9 @@ height:50px;
         <div class="boite">
             <table>
                 <tr>
-                    <td>Nom du Patient</td>
+                    
                     <td> Horaire</td>
+                    <td>Nom du Patient</td>
                 </tr>
                 <tr>
                 <?php 
@@ -310,9 +344,14 @@ height:50px;
                 while($data = mysqli_fetch_assoc($res)){
                 ?>
                 <td><?php
-                    echo $data["ID_Patient"];?></td>
-                    <td><?php
-                    $data["Heure"];?></td>
+                    echo $data["Heure"];?></td>
+                <td><?php
+                     $id1=$data["ID_Patient"];
+                    $sql="SELECT * FROM patient WHERE ID_Patient= $id1 ";
+                    $res = mysqli_query($db_handle,$sql);
+                    $data = mysqli_fetch_assoc($res);
+                       echo $data["Nom"];?></td>
+                    
                     <?php
                   }
                 ?>
@@ -323,10 +362,11 @@ height:50px;
         <div class="boite5" >
         <h1>Vendredi :</h1>
         <div class="boite">
-            <table>
+        <table>
                 <tr>
-                    <td>Nom du Patient</td>
+                    
                     <td> Horaire</td>
+                    <td>Nom du Patient</td>
                 </tr>
                 <tr>
                 <?php 
@@ -336,23 +376,29 @@ height:50px;
                 while($data = mysqli_fetch_assoc($res)){
                 ?>
                 <td><?php
-                    echo $data["ID_Patient"];?></td>
-                    <td><?php
-                    $data["Heure"];?></td>
+                  echo  $data["Heure"];?></td>
+                <td><?php
+                     $id1=$data["ID_Patient"];
+                    $sql="SELECT * FROM patient WHERE ID_Patient= $id1 ";
+                    $res = mysqli_query($db_handle,$sql);
+                    $data = mysqli_fetch_assoc($res);
+                       echo $data["Nom"];?></td>
+                    
                     <?php
                   }
                 ?>
                 </tr>
-            </table>  
+            </table> 
             </div>
         </div>
         <div class="boite6">
         <h1>Samedi :</h1>
         <div class="boite">
-            <table>
+        <table>
                 <tr>
-                    <td>Nom du Patient</td>
+                    
                     <td> Horaire</td>
+                    <td>Nom du Patient</td>
                 </tr>
                 <tr>
                 <?php 
@@ -362,23 +408,29 @@ height:50px;
                 while($data = mysqli_fetch_assoc($res)){
                 ?>
                 <td><?php
-                    echo $data["ID_Patient"];?></td>
-                    <td><?php
-                    $data["Heure"];?></td>
+                  echo  $data["Heure"];?></td>
+                <td><?php
+                     $id1=$data["ID_Patient"];
+                    $sql="SELECT * FROM patient WHERE ID_Patient= $id1 ";
+                    $res = mysqli_query($db_handle,$sql);
+                    $data = mysqli_fetch_assoc($res);
+                       echo $data["Nom"];?></td>
+                    
                     <?php
                   }
                 ?>
                 </tr>
-                </table>   
+            </table> 
             </div>
         </div>
         <div class="boite7" >
         <h1>Dimanche :</h1>
         <div class="boite">
-            <table>
+        <table>
                 <tr>
-                    <td>Nom du Patient</td>
+                    
                     <td> Horaire</td>
+                    <td>Nom du Patient</td>
                 </tr>
                 <tr>
                 <?php 
@@ -388,14 +440,19 @@ height:50px;
                 while($data = mysqli_fetch_assoc($res)){
                 ?>
                 <td><?php
-                    echo $data["ID_Patient"];?></td>
-                    <td><?php
-                    $data["Heure"];?></td>
+                  echo  $data["Heure"];?></td>
+                <td><?php
+                     $id1=$data["ID_Patient"];
+                    $sql="SELECT * FROM patient WHERE ID_Patient= $id1 ";
+                    $res = mysqli_query($db_handle,$sql);
+                    $data = mysqli_fetch_assoc($res);
+                       echo $data["Nom"];?></td>
+                    
                     <?php
                   }
                 ?>
                 </tr>
-            </table>   
+            </table>  
             </div>
         </div>
 	  </hr>
@@ -404,7 +461,7 @@ height:50px;
 		<footer>
 		<small>
 			<hr>
-				<pre>Mail:<a href="mailto:hugo.dermatheossian@omnes_sante.fr">hugo.dermatheossian@edu.ece.fr</a>   Téléphone: <em>(+33)1 44 39 06 00</em>       Adresse:37, Quai de Grenelle,75015 Paris</pre>
+				<pre>Mail:<a href="mailto:hugo.dermatheossian@omnes_sante.fr">hugo.dermatheossian@edu.ece.fr</a>   Téléphone: <em>(+33)1 44 39 06 00</em>       Adresse:37, Quai de Grenelle,75015 Paris<a href="Med.php" type="button" class="retour">RETOUR</a></pre>
 			</hr>
 		</small>
 	</footer>

@@ -37,14 +37,13 @@
 		}
 
 		#footer {
-			position: absolute;
-			width: 100%;
-			background-color: white;
-			color: black;
-			clear: both;
-			text-align: center;
-			padding: 0px;
-			bottom: 0px;
+			bottom:0;
+text-align: center;
+width:100%;
+
+padding-top:50px;
+
+height:50px;
 		}
 
 		.bouton{

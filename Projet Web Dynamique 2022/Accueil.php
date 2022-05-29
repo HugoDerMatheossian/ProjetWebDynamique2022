@@ -98,7 +98,7 @@
 				<?php 
 					switch($_SESSION['type']){
 						case 'patient':
-							echo '<a href="rdv.html" class="bouton" style="width: 250px">Rendez-vous</a>';
+							echo '<a href="rdvdupatient.php" class="bouton" style="width: 250px">Rendez-vous</a>';
 							break;
 						case 'medecin':
 							echo '<a href="rdvdumedecin.php" class="bouton" style="width: 250px">Rendez-vous</a>';

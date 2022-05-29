@@ -59,14 +59,13 @@ mysqli_close($db_handle);
 
 
 #footer {
-    position: absolute;
-    width: 100%;
-    background-color: white;
-    color: black;
-    clear: both;
-    text-align: center;
-    padding: 0px;
-    bottom: 0px;
+    bottom:0;
+text-align: center;
+width:100%;
+position: fixed;
+padding-top:50px;
+
+height:50px;
 }
 
 .bouton{
@@ -155,7 +154,7 @@ mysqli_close($db_handle);
 
 }
 .bouton1 {
-    background-color:cornflowerblue;
+    background-color:darkseagreen;
     border: solid;
     color: black;
     padding: 10px;
@@ -170,6 +169,10 @@ mysqli_close($db_handle);
     -ms-border-radius: 15px;
     -o-border-radius: 15px;
     height:25px;
+}
+.bouton1:hover {
+    background-color:olivedrab;
+    color: white;
 }
 .bouton2 {
     background-color:cornflowerblue;
@@ -188,6 +191,31 @@ mysqli_close($db_handle);
     -o-border-radius: 15px;
     height:25px;
 }
+.bouton2:hover {
+    background-color:mediumblue;
+    color: white;
+}
+.bouton3 {
+    background-color:mediumpurple;
+    border: solid;
+    color: black;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    display: inline-block;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+    height:25px;
+}
+.bouton3:hover {
+    background-color:darkorchid;
+    color: white;
+}
 
 
         </style>
@@ -198,8 +226,8 @@ mysqli_close($db_handle);
 	</div>
 
 	<div id="nav">
+        <hr>
 			<table>
-				<br>
 				<a href="Accueil.php" class="bouton" style="width: 160px">Accueil</a>
 				<?php 
                     switch($_SESSION['type']){
@@ -251,8 +279,10 @@ mysqli_close($db_handle);
                     }   
                 ?>
 			</table>
+        </hr>
 	</div>
 <div id="wrapper">
+    <hr>
     <div class="boite1">
             <div class="cercle">
                 <?php 
@@ -279,12 +309,17 @@ mysqli_close($db_handle);
             <div class="boite3">
                 <p>
                 <?php 
-                echo ' <a href="priserdv.php?id='.$id.'"class="bouton1" style="width: 250px">' ."Prendre un RDV".' </a>';
+                echo ' <a href="priserdv.php?id='.$id.'"class="bouton3" style="width: 250px">' ."Prendre un RDV".' </a>';
+                ?>
+                <?php
                 echo '<a href="Accueil.php" class="bouton1" style="width: 250px">Communiquer avec le médecin</a>';
+                ?>
+                <?php
 				echo '<a href="Accueil.php" class="bouton2" style="width: 250px">Voir son CV</a>';
                 ?>
                 </p>
         </div>
+                </hr>
 </div>
         <div id="footer">
 		<footer>

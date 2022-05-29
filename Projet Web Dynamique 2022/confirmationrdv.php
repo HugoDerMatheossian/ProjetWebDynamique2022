@@ -9,9 +9,6 @@ $db_found = mysqli_select_db($db_handle,$database);
 
 if ($db_found){
 
-    echo $_GET['id']; 
-    echo $_GET['jour']; 
-    echo $_GET['heure']; 
 
   $id=$_GET['id'];
   $jour=$_GET['jour']; 
@@ -156,7 +153,12 @@ font-weight: bold;
 			</table>
 	</div>
 
-
+<div>
+    <?php  echo $_GET['id']; 
+    echo $_GET['jour']; 
+    echo $_GET['heure']; 
+    ?>
+</div>
 
         <div id="footer">
 		<footer>

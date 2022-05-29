@@ -32,15 +32,15 @@ if ($db_found){
   		if($data['Nom']==$login){
   			if($data['E-mail']==$email){ 
 				if($type_carte==$data['Type_Carte']){	
-					echo "1";
+					
 					if($num_carte==$data['Num_Carte']){
-						echo "2";
+						
 						if($nom_carte==$data['Nom_Carte']){
-							echo "3";
+							
 							if($date_carte==$data['Date_Expiration']){
-								echo "4";
+								
 								if($code_secret==$data['Code_Securite']){
-									echo "5";
+									
 									$sql = "INSERT INTO rdv_medecin(ID_Patient,ID_Medecin,Jour,Heure) VALUES ('".$_SESSION['ID_Patient']."','".$id."','".$jour."','".$heure."')";
 								$res = mysqli_query($db_handle,$sql);
 								$compteur++;

@@ -1,5 +1,19 @@
 <?php 
-session_start();
+session_start(); 
+$database = "omnes_sante";
+$type="patient";
+//On s'y connecte
+$db_handle = mysqli_connect('localhost', 'root', '');
+$db_found = mysqli_select_db($db_handle, $database);
+$sql="SELECT * FROM `patient`";
+$result = mysqli_query($db_handle, $sql);
+while($data = mysqli_fetch_assoc($result)){
+  if ($data['Nom']==$_SESSION['login']){
+    if ($data['E-mail']==$_SESSION['email']) {
+      $_SESSION['ID_Patient']=$data['ID_Patient'];
+    }
+  }
+}
 ?>
 
 <!DOCTYPE html>
@@ -105,16 +119,21 @@ session_start();
   			<fieldset>
   				<legend>Informations Bancaires:</legend>
   				<label >Type de carte</label><br/>
-  				<input type="text" id="type_carte" name="type_carte"><br>
+  				<select id="type_carte" name="type_carte" required><br>
+  					<option value="Visa" selected>Visa</option>
+  					<option value="MasterCard">MasterCard</option>
+  					<option value="American Express">American Express</option>
+  					<option value="PayPal">PayPal</option>
+  				</select><br>
   				<label >N° Bancaire</label><br/>
-  				<input type="number" id="numero_carte" name="numero_carte"><br>
+  				<input type="number" id="numero_carte" name="numero_carte" required><br>
   				<label >Nom sur la carte</label><br/>
-  				<input type="text" id="nom_carte" name="nom_carte"><br>
+  				<input type="text" id="nom_carte" name="nom_carte"required><br>
   				<label >Date d'expiration</label><br/>
-  				<input type="text" id="date_carte" name="date_carte"><br>
+  				<input type="text" id="date_carte" name="date_carte"required><br>
   				<label >Code Secret</label><br/>
-  				<input type="number" id="code_carte" name="code_carte"><br>
-  				<input type="submit" value="Valider">
+  				<input type="number" id="code_carte" name="code_carte"required><br>
+  				<input type="submit" id="submit" value="Valider">
   			</fieldset>
   		</form>
   	</div>

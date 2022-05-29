@@ -4,7 +4,7 @@
 	$database = "omnes_sante";
 	$type="patient";
 
-	//On s'y connecte
+	//On s'y connecte 
 	$db_handle = mysqli_connect('localhost', 'root', '');
 	$db_found = mysqli_select_db($db_handle, $database);
 

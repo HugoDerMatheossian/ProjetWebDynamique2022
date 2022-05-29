@@ -83,7 +83,7 @@
       <tbody>
         <?php while($row = $stmt->fetch(PDO::FETCH_ASSOC)) : ?>
         <tr>
-           <td><a href="medecininfo.php"><?php echo htmlspecialchars($row['Nom']);?></a></td>
+           <td><a href="recherche.php"><?php echo htmlspecialchars($row['Nom']);?></a></td>
           <td><?php echo htmlspecialchars($row['Prenom']); ?></td>
         </tr>
          <?php endwhile; ?>

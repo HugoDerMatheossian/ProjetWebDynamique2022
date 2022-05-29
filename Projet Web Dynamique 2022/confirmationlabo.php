@@ -142,7 +142,7 @@ mysqli_close($db_handle);
             <a href="Accueil.php" class="bouton" style="width: 200px">Accueil</a>
 				<a href="toutparcourir.html" class="bouton" style="width: 200px">Tout Parcourir</a>
 				<a href="recherche.php" class="bouton" style="width: 200px">Recherche</a>
-				<a href="rdv.html" class="bouton" style="width: 200px">Rendez-vous</a>
+				<a href="rdvdupatient.php" class="bouton" style="width: 200px">Rendez-vous</a>
 				<a href="patient.php" class="bouton" style="width: 200px">Votre Compte</a>
 			</table>
 </hr>

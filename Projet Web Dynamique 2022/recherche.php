@@ -47,14 +47,14 @@ $tab = $res->fetchAll();
         }
 
         #footer {
-            position: absolute;
-            width: 100%;
-            background-color: white;
-            color: black;
-            clear: both;
-            text-align: center;
-            padding: 0px;
-            bottom: 0px;
+            position: fixed;
+bottom:0;
+text-align: center;
+width:100%;
+
+padding-top:50px;
+
+height:50px;
         }
 
         .bouton{
@@ -193,12 +193,16 @@ $tab = $res->fetchAll();
                 <?php } ?>
             </ol>
         </div><?php } ?>
+        <br>
+        <br>
         <div id="footer">
 		<footer>
 		<small>
 			<hr>
+            
 				<pre>Mail:<a href="mailto:hugo.dermatheossian@omnes_sante.fr">hugo.dermatheossian@edu.ece.fr</a>   Téléphone: <em>(+33)1 44 39 06 00</em>       Adresse:37, Quai de Grenelle,75015 Paris</pre>
-			</hr>
+
+            </hr>
 		</small>
 	</footer>
 	</div>	

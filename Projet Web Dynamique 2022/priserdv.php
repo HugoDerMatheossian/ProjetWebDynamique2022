@@ -50,14 +50,13 @@
 
 
         #footer {
-            position: absolute;
-            width: 100%;
-            background-color: white;
-            color: black;
-            clear: both;
-            text-align: center;
-            padding: 0px;
-            bottom: 0px;
+            bottom:0;
+text-align: center;
+width:100%;
+
+padding-top:50px;
+position: fixed;
+height:50px;
         }
 
         .bouton {
@@ -123,11 +122,8 @@ if ($db_found) {
   $sql = "SELECT * FROM rdv_medecin where ID_Medecin = " . $_GET['id'] . ";" ;
   $result = mysqli_query($db_handle, $sql);
   while ($data = mysqli_fetch_assoc($result)) { 
-    echo "J'ai un rdv le  :" . $data['Jour'];
-    echo "à  :" . $data['Heure'];
 
     if (mysqli_num_rows($result) == 0) {
-        echo "Il n'y a rien pour le moment";
     }
       else {
         switch($data['Jour']){
@@ -1008,49 +1004,49 @@ if ($db_found) {
             <?php 
                     switch($_SESSION['type']){
                         case 'patient':
-                            echo '<a href="toutparcourir.html" class="bouton" style="width: 250px">Tout Parcourir</a>';
+                            echo '<a href="toutparcourir.html" class="bouton" style="width: 160px">Tout Parcourir</a>';
                             break;
                         default :
-                            echo '<a href="" class="bouton" style="width: 250px">Tout Parcourir</a>';
+                            echo '<a href="" class="bouton" style="width: 160px">Tout Parcourir</a>';
                             break;
                     }
                 ?>
                 <?php 
                     switch($_SESSION['type']){
                         case 'patient':
-                            echo '<a href="recherche.php" class="bouton" style="width: 250px">Recherche</a>';
+                            echo '<a href="recherche.php" class="bouton" style="width: 160px">Recherche</a>';
                             break;
                         default :
-                            echo '<a href="" class="bouton" style="width: 250px">Recherche</a>';
+                            echo '<a href="" class="bouton" style="width: 160px">Recherche</a>';
                             break;
                     }
                 ?>
                 <?php 
                     switch($_SESSION['type']){
                         case 'patient':
-                            echo '<a href="rdv.html" class="bouton" style="width: 250px">Rendez-vous</a>';
+                            echo '<a href="rdv.html" class="bouton" style="width: 160px">Rendez-vous</a>';
                             break;
                         case 'medecin':
-                            echo '<a href="rdv.html" class="bouton" style="width: 250px">Rendez-vous</a>';
+                            echo '<a href="rdv.html" class="bouton" style="width: 160px">Rendez-vous</a>';
                             break;
                         default :
-                            echo '<a href="" class="bouton" style="width: 250px">Rendez-vous</a>';
+                            echo '<a href="" class="bouton" style="width: 160px">Rendez-vous</a>';
                             break;
                     }
                 ?>
                 <?php 
                 switch($_SESSION['type']){
                     case "patient":
-                        echo "<input type='button' class='bouton' style='width:250px' title='Votre Compte' value='Votre Compte' onclick=\"location.href='patient.php'\">";
+                        echo "<input type='button' class='bouton' style='width:160px' title='Votre Compte' value='Votre Compte' onclick=\"location.href='patient.php'\">";
                         break;
                     case "medecin":
-                        echo '<a href="Med.php" class="bouton" style="width: 250px">Votre Compte</a>';
+                        echo '<a href="Med.php" class="bouton" style="width: 160px">Votre Compte</a>';
                         break;
                     case "admin":
-                        echo '<a href="" class="bouton" style="width: 250px">Votre Compte</a>';
+                        echo '<a href="" class="bouton" style="width: 160px">Votre Compte</a>';
                         break;
                     default:
-                        echo '<a href="choixTypeCompte.html" class="bouton" style="width: 250px">Connexion</a>';
+                        echo '<a href="choixTypeCompte.html" class="bouton" style="width: 160px">Connexion</a>';
                         break;
                     }   
                 ?>
@@ -1191,7 +1187,7 @@ if ($db_found) {
         <footer>
             <small>
                 <hr>
-                <!--pre>Mail:<a href="mailto:hugo.dermatheossian@omnes_sante.fr">hugo.dermatheossian@edu.ece.fr</a>   Téléphone: <em>(+33)1 44 39 06 00</em>       Adresse:37, Quai de Grenelle,75015 Paris</pre-->
+                <pre>Mail:<a href="mailto:hugo.dermatheossian@omnes_sante.fr">hugo.dermatheossian@edu.ece.fr</a>   Téléphone: <em>(+33)1 44 39 06 00</em>       Adresse:37, Quai de Grenelle,75015 Paris</pre>
                 </hr>
             </small>
         </footer>

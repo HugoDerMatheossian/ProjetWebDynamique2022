@@ -48,26 +48,31 @@ $db_found = mysqli_select_db($db_handle, $database);
 		}
 
 		#footer {
-			position: absolute;
-			width: 100%;
-			background-color: white;
-			color: black;
-			clear: both;
-			text-align: center;
-			padding: 0px;
-			bottom: 0px;
-		}
+			position: fixed;
+bottom:0;
+text-align: center;
+width:100%;
+
+padding-top:50px;
+
+height:50px;
+        }
 
 		.bouton{
 			background-color:#00BFFF;
-			border: solid;
-			color: black;
-			padding: 10px;
-			margin: 10px;
-			text-align: center;
-			display: inline-block;
-			font-size: 20px;
-			cursor: pointer;
+    border: solid;
+    color: black;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    display: inline-block;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
 		}
 		.bouton:hover {
 			background-color: #4169E1;
@@ -83,23 +88,23 @@ $db_found = mysqli_select_db($db_handle, $database);
 </head>
 <body>
 	<div id="header"> 
-		<h1>Omnes Santé<img src="logo.png" height="70px" ></h1>
+		<h1>Omnes Santé<img src="logo.png" height="40px" ></h1>
 	</div>
 	<div id="nav">
 		<hr>
 			<table>
-				<br>
-				<a href="Accueil.php" class="bouton" style="width: 250px">Accueil</a>
-				<a href="" class="bouton" style="width: 250px">Accéder à l'emploi du temps</a>
-				<a href="modifPhoto.php" class="bouton" style="width: 250px">Modifier Photo</a>
-				<a href="modifCV.php" class="bouton" style="width: 250px">Modifier votre CV</a>
-				<a href="deconnexion.php" class="bouton" style="width: 250px">Deconnexion</a>
+				<a href="Accueil.php" class="bouton" style="width: 160px">Accueil</a>
+				<a href="rdvdumedecin.php" class="bouton" style="width: 160px">Accéder à l'emploi du temps</a>
+				<a href="modifPhoto.php" class="bouton" style="width: 160px">Modifier Photo</a>
+				<a href="modifCV.php" class="bouton" style="width: 160px">Modifier votre CV</a>
+				<a href="deconnexion.php" class="bouton" style="width: 160px">Deconnexion</a>
 			</table>
 		</hr>
 	</div>
 	<div id="infos">
-		<div id="infos-gauche" style="float:left" width="500px">
-			<img src="<?php echo $_SESSION['photo'];  ?>" height="400px" width="400px">
+		<hr>
+		<div id="infos-gauche" style="float:left" width="300px">
+			<img src="<?php echo $_SESSION['photo'];  ?>" height="300px" width="300px">
 		</div>
 		<div id="infos-droite" style="float:center" >
 			<p><b>Vos Informations:<br></b></p>
@@ -111,6 +116,7 @@ $db_found = mysqli_select_db($db_handle, $database);
 			<p>E-mail	: <?php echo $_SESSION['email'];?><br></p>
 
 		</div>
+	</hr>
 	</div>
 	<div id="footer">
 		<footer>

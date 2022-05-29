@@ -10,26 +10,61 @@ $num_carte=isset($_POST["num_carte"])? $_POST["num_carte"] : "";
 $nom_carte=isset($_POST["nom_carte"])? $_POST["nom_carte"] : "";
 $date_carte=isset($_POST["date_carte"])? $_POST["date_carte"] : "";
 $code_secret=isset($_POST["code_secret"])? $_POST["code_secret"] : "";
+/*echo $type_carte;
+echo $num_carte;
+echo $nom_carte;
+echo $date_carte;
+echo $code_secret;*/
+
+//les variables ci-dessus sont bien reconnues
 
 if ($db_found){
-	$id=$_GET['id'];
-	$jour=$_GET['jour']; 
-    $heure=$_GET['heure'];
+	$id=$_SESSION['id_medecin'];//
+	$jour=$_SESSION['jour']; //
+    $heure=$_SESSION['heure'];//
 	$login=$_SESSION['login'];
 	$email=$_SESSION['email'];
+	$compteur=0;
 
 	$sql = "SELECT * FROM `patient`";
   	$result = mysqli_query($db_handle, $sql);
-
-
+  	while($data=mysqli_fetch_assoc($result)){
+  		if($data['Nom']==$login){
+  			if($data['E-mail']==$email){ 
+				if($type_carte==$data['Type_Carte']){	
+					echo "1";
+					if($num_carte==$data['Num_Carte']){
+						echo "2";
+						if($nom_carte==$data['Nom_Carte']){
+							echo "3";
+							if($date_carte==$data['Date_Expiration']){
+								echo "4";
+								if($code_secret==$data['Code_Securite']){
+									echo "5";
+									$sql = "INSERT INTO rdv_medecin(ID_Patient,ID_Medecin,Jour,Heure) VALUES ('".$_SESSION['ID_Patient']."','".$id."','".$jour."','".$heure."')";
+								$res = mysqli_query($db_handle,$sql);
+								$compteur++;
+								}
+							}
+						}
+	  				}
+	  			}	
+  			}
+  			
+  		}
+  		
+  	}
+  	if($compteur==0){
+  		echo "Problème de paiement!";
+  		echo '<meta http-equiv="refresh" content="5;URL=recherche.php">';
+  		echo "<br>";
+  		echo "retour a la page de recherche dans 5s...";
+  	}
+  	else{
+  		echo "Le paiement est OK!";
+  		echo '<meta http-equiv="refresh" content="5;URL=recherche.php">';
+  		echo "<br>";
+  		echo "retour a la page de recherche dans 5s...";
+  	}
 }
-
-//on verifie que les champs des infos bancaires correspondent à ceux de la bdd
-if(($type_carte==data['type_carte'])&&($num_carte==data['num_carte'])&&($nom_carte==data['nom_carte'])&&($date_carte==data['date_carte'])&&($code_secret==data['code_secret'])){
-    $sql = "INSERT INTO rdv_medecin(ID_Patient,ID_Medecin,Jour,Heure) VALUES ('".$_SESSION['ID_Patient']."','".$id."','".$jour."','".$heure."');";
-    $res = mysqli_query($db_handle,$sql);
-}
-else{
-    echo "Erreur de paiement!";;
-} 
 ?>

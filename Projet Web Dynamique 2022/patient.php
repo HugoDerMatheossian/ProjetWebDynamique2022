@@ -112,7 +112,6 @@ while($data = mysqli_fetch_assoc($result)){
       <p>Nom: <?php echo $_SESSION['login'];?><br></p>
       <p>Prénom: <?php echo $_SESSION['prenom'];?><br></p>
       <p>E-mail : <?php echo $_SESSION['email'];?><br></p>
-      <?php  echo $_SESSION['Id_patient']?>
 
     </div>
   </div>

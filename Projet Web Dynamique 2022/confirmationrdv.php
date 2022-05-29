@@ -15,6 +15,9 @@ if ($db_found){
   $heure=$_GET['heure'];
   $login=$_SESSION['login'];
   $email=$_SESSION['email'];
+  $_SESSION['jour']=$jour;
+  $_SESSION['heure']=$heure;
+  $_SESSION['id_medecin']=$id;
 
  
   $sql = "SELECT * FROM `patient`";
@@ -162,7 +165,12 @@ mysqli_close($db_handle);
 <hr>
 <div id="boite">
    <div id="boite1">
+    <div>
         <h1>Valider vos informations Bancaires:</h1>
+        <img src="cb.jpg"  height="75px" width="125px"></img>
+    </div>
+    <div>
+        <h3> Prix: 25€</h3>
         <form action="confirmationrdv2.php" method="post" ><br>
             <input type="input" name="type_carte" id="type_carte" placeholder="Type de votre Carte"></input>
             <input type="input" name="num_carte" id="num_carte"placeholder="N°de votre Carte "></input><br>
@@ -171,6 +179,8 @@ mysqli_close($db_handle);
             <input type="password" name="code_secret"id="code_secret" placeholder="Votre Code"></input><br>
             <input type="submit" name="submit"></input>
         </form>
+    </div>
+        
     <?php
     /*echo "Félicitation vous avez pris un rdv avec le docteur  ". $data["Nom"];*/ 
     /*echo $_GET['jour']; 

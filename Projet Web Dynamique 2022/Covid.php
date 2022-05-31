@@ -9,11 +9,17 @@ $db_found = mysqli_select_db($db_handle,$database);
 
 // on fait un traitement de la base de donnée si elle existe
 if ($db_found){ 
-    $sql ="SELECT * FROM services  WHERE Nom='Dépistage covid-19'";
+    $sql ="SELECT * FROM services ";
     $res = mysqli_query($db_handle,$sql);
 
-    $data = mysqli_fetch_assoc($res);
-   $id= $data["ID_Service"];
+    while($data = mysqli_fetch_assoc($res)){
+    	if($data['Nom']=="Depistage covid-19"){
+			$id= $data["ID_Service"];
+    		$nom= $data["Nom"];
+    	}
+    	
+    }
+   
 }
 
 // si existe pas 
@@ -117,7 +123,7 @@ mysqli_close($db_handle);
 </head>
 <body>
 	<div id="header">
-		<h1><b>Service <?php echo $data["Nom"] ?></b></h1>
+		<h1><b>Service <?php echo $nom ?></b></h1>
 	</div>
 	<div id="section">
 		<div id="s-left" style="float:left" width="500px">

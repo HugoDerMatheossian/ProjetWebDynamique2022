@@ -9,11 +9,16 @@ $db_found = mysqli_select_db($db_handle,$database);
 
 // on fait un traitement de la base de donnée si elle existe
 if ($db_found){ 
-    $sql ="SELECT * FROM services  WHERE Nom='Cancérologie'";
+    $sql ="SELECT * FROM services";
     $res = mysqli_query($db_handle,$sql);
 
-    $data = mysqli_fetch_assoc($res);
-   $id= $data["ID_Service"];
+    while($data = mysqli_fetch_assoc($res)){
+    	if($data['Nom']=="Cancerologie"){
+			$id= $data["ID_Service"];
+    		$nom= $data["Nom"];
+    	}
+    	
+    }
 }
 
 // si existe pas 

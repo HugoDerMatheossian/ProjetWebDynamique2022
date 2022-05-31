@@ -24,6 +24,11 @@ if ($db_found){
   $sql = "SELECT * FROM `patient`";
   $result = mysqli_query($db_handle, $sql);
   while($data = mysqli_fetch_assoc($result)){
+    if($data['Nom']==$login){
+        if($data['E-mail']==$email){
+            $_SESSION['ID_Patient']=$data['ID_Patient'];
+        }
+    }
   }
 
   $sql = "INSERT INTO rdv_labo(ID_Patient,ID_Service,Jour,Heure) VALUES ('".$_SESSION['ID_Patient']."','".$id."','".$jour."','".$heure."');";

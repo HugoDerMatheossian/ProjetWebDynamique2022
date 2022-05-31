@@ -75,7 +75,6 @@
 				while ($data = mysqli_fetch_assoc($result)) {
 					if($data['Nom']==$_SESSION['login']){
 						if($data['E-mail']==$_SESSION['email']){
-							echo "string";
 							$_SESSION['Id_patient']= $data['ID_Patient'];
 						}
 					}
@@ -235,6 +234,24 @@
 			$phone=isset($_POST["Tel"])? $_POST["Tel"] : "";
 			$vital=isset($_POST["CarteVitale"])? $_POST["CarteVitale"] : "";
 			$email=isset($_POST["Email"])? $_POST["Email"] : "";
+			///////////on teste toute les entrées possibles////////////////
+			if(!empty($_POST['type_carte']) && ($_POST['type_carte'] == 'Visa')){
+						$type_carte="Visa";
+					}
+			if(!empty($_POST['type_carte']) && ($_POST['type_carte'] == 'MasterCard')){
+						$type_carte="MasterCard";
+					}
+			if(!empty($_POST['type_carte']) && ($_POST['type_carte'] == 'American Express')){
+						$type_carte="American Express";
+					}
+			if(!empty($_POST['type_carte']) && ($_POST['type_carte'] == 'PayPal')){
+						$type_carte="PayPal";
+					}
+			///////////////////////////////////////////////////////////////
+			$numero_carte=isset($_POST["numero_carte"])? $_POST["numero_carte"]: "";
+			$nom_carte=isset($_POST["nom_carte"])? $_POST["nom_carte"] : "";
+			$date_carte=isset($_POST["date_carte"])? $_POST["date_carte"] : "";
+			$code_carte=isset($_POST["code_carte"])? $_POST["code_carte"] : "";
 
 			if ($db_found){
 				//on cherche le patient dans notre bdd
@@ -260,6 +277,17 @@
 			}else{
 				//on ajoute ce patient dans notre BDD
 				$sql = "INSERT INTO `patient`(`Nom`,`Prenom`,`Adresse1`,`Adresse2`,`Ville`,`Code_Postal`,`Pays`,`Tel`,`Carte_Vitale`,`E-mail`) VALUES ('$name','$prenom','$adress1','$adress2','$city','$postal','$pays','$phone','$vital','$email')";
+				$result = mysqli_query($db_handle, $sql);
+				/*,`Type_carte`,`Num_Carte`,`Nom_Carte`,`Date_Expirations`,`Code_Securite` ,'$type_carte','$numero_carte','$nom_carte','$date_carte','$code_carte'*/
+				$sql='UPDATE `patient`SET Type_Carte = "'.$type_carte.'"WHERE Nom ="'.$name.'" AND Prenom ="'.$prenom.'"';
+				$result = mysqli_query($db_handle, $sql);
+				$sql='UPDATE `patient`SET Num_Carte = "'.$numero_carte.'"WHERE Nom ="'.$name.'" AND Prenom ="'.$prenom.'"';
+				$result = mysqli_query($db_handle, $sql);
+				$sql='UPDATE `patient`SET Nom_Carte = "'.$nom_carte.'"WHERE Nom ="'.$name.'" AND Prenom ="'.$prenom.'"';
+				$result = mysqli_query($db_handle, $sql);
+				$sql='UPDATE `patient`SET Date_Expiration = "'.$date_carte.'"WHERE Nom ="'.$name.'" AND Prenom ="'.$prenom.'"';
+				$result = mysqli_query($db_handle, $sql);
+				$sql='UPDATE `patient`SET Code_Securite = "'.$code_carte.'"WHERE Nom ="'.$name.'" AND Prenom ="'.$prenom.'"';
 				$result = mysqli_query($db_handle, $sql);
 				echo "vous etes inscrit maintenant. <br>";
 				//ici on met accueil
